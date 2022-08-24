@@ -97,7 +97,7 @@
     background-position: top right;
     background-repeat: no-repeat;
     padding: 80px 0 0 565px;
-    margin-top: 200px;
+    margin: 200px 0 50px 0;
 }
 
 .city__title {
@@ -135,14 +135,18 @@
     margin-bottom: 40px;
 }
 
+.bg-silver {
+    background-color: #f4f4f4;
+}
+
 .city-history-top, .city-history-bottom {
     padding: 150px 60px 0 60px;
-    background-color: rgba(40, 40, 40, 0.05);
     position: relative;
 }
 
 .city-history-bottom {
     padding-bottom: 100px;
+    display: flex;
 }
 
 .city-history-top__page {
@@ -154,40 +158,39 @@
     mix-blend-mode: difference;
     color: #232323;
     max-width: 760px;
-    margin: 350px 0 0 690px;
+    margin: 350px 0 75px 690px;
     text-transform: uppercase;
 }
 
-.city-history-top__description {
+.center-description {
+    margin-left: 50%;
     font-size: 18px;
     max-width: 600px;
-    margin-left: 900px;
     line-height: 25px;
 }
 
-.city-history-top__img {
+.history-left-img {
     position: absolute;
     width: 765px;
     height: 770px;
+}
 
+.history-right-img {
+    position: absolute;
+    width: 900px;
+    height: 750px;
+    right: 60px;
 }
 
 .city-history-bottom__description {
     max-width: 500px;
 }
 
-.city-history-bottom__img {
-    position: absolute;
-    width: 900px;
-    height: 750px;
-    right: 0;
-    top: 150px;
-}
-
 .history-after {
     text-align: center;
     height: unset;
     font-size: 47px;
+    padding: 300px 0;
 }
 
 .history-after-big .history-after__text {
@@ -200,6 +203,22 @@
 
 .history-after-big .history-after__text {
     max-width: 930px;
+}
+
+.history-additional {
+    padding: 150px 60px 390px 60px;
+    position: relative;
+
+}
+
+.history-additional__image {
+    top: 0;
+}
+
+.history-additional__image--right {
+    width: 450px;
+    height: 450px;
+    margin-top: 170px;
 }
 
 .js-slider {

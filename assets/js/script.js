@@ -1,17 +1,7 @@
 $(window).on("load", function () {
     let effect = new Rellax(".rellax-img", {speed: 3});
-    /*  let $sliders = $(".slider");
-      $sliders.each(function () {
-          $(this).on("wheel", function () {
-              let $child = $(this).children();
-              let $active = $child.filter(".slide-active");
-              let $next = $active.next();
-              $active.removeClass("slide-active");
-              $next.addClass("slide-active");
-          });
-      });*/
 })
-$(window).on("scroll", function () { /* везде где используется в переборе this заменить на elem */
+$(window).on("scroll", function () {
     let $videos = $(".js-wider");
     let $scroll = $(this).scrollTop();
     let $scrollBarWidth = window.innerWidth - $(window).width();
@@ -42,9 +32,9 @@ $(window).on("scroll", function () { /* везде где используетс
             let $active = $slides.find(".slide-active");
             $active.removeClass("slide-active");
             $next.addClass("slide-active");
-            $("html, body").animate({
-                scrollTop: parseInt($parentOffset + $verticalH * slidesPassed + ($verticalH/4))
-            }, 900, "linear" )
+            $("html").animate({
+                scrollTop: parseInt($parentOffset + $verticalH * slidesPassed)
+            }, 900, "linear")
         }
     });
 });

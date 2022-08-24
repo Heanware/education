@@ -19,7 +19,6 @@
             font-display: swap;
         }
     </style>
-    <!-- переименовать некоторые классы тут и в стилях -->
 </head>
 <body>
 <div class="cities-items">
@@ -30,7 +29,7 @@
             placeat quo voluptates.
             Aperiam consequatur fugiat id magni obcaecati odit optio quis reprehenderit veniam vero!
         </div>
-                  <button class="cities-items__item--button">Подробнее</button>
+        <button class="cities-items__item--button">Подробнее</button>
     </div>
     <div class="cities-items__item" style="background-image: url('assets/img/tblsk.jpg')">
         <div class="cities-items__item--name">Тобольск</div>
@@ -62,7 +61,7 @@
     </div>
 </div>
 <div class="container">
-    <div class="city" style="background-image: url('/assets/img/map.svg')">
+    <div class="city" style="background-image: url('/assets/img/tmn-map.svg')">
         <h1 class="city__title">Тюмень</h1>
         <div class="city__description">По своим философским взглядам Дезами был материалистом и атеистом, последователем
             Гельвеция, однако знак философски трансформирует из ряда вон выходящий предмет деятельности.
@@ -90,24 +89,24 @@
         </video>
     </div>
 </div>
-<div class="city-history-top">
+<div class="city-history-top bg-silver">
     <div class="city-history-top__page">История</div>
     <!--    <img src="/assets/img/tmn-top.jpg" alt="" class="city-history-top__img">-->
-    <div class="city-history-top__img rellax-img" data-rellax-percentage="0.5"
+    <div class="city-history-top__img rellax-img history-left-img" data-rellax-percentage="0.5"
          style="background-image: url('/assets/img/tmn-top.jpg')"></div>
     <div class="city-history-top__title">Тюмень первый русский город
         в Сибири
     </div>
-    <div class="city-history-top__description">
+    <div class="city-history-top__description center-description">
         Строительство тюменского острога началось 29 июля 1586 года недалеко от Чинги-Туры по указу последнего царя из
         династии Рюриковичей Федора Ивановича.
-        <br><br><br><br><br>
+        <br><br>
         Тюмень развивалась как купеческий город. Здесь возводили фабрики, заводы, ремесленные лавки. Особое развитие
         получило кожевенное, кузнечное, чугунное дело, ткацкое ремесло. Продукция умельцев была известна не только в
         регионе, но и далеко за его пределами.
     </div>
 </div>
-<div class="city-history-bottom">
+<div class="city-history-bottom bg-silver">
     <!--    <img src="/assets/img/tmn-bottom.jpg" alt="" class="city-history-bottom__img">-->
 
     <div class="city-history-bottom__description">
@@ -124,7 +123,7 @@
         Город является привлекательным как для проживания, так и для вложения инвестиций. И неудивительно, ведь здесь
         активно развивается промышленность и инфраструктура.
     </div>
-    <div class="city-history-bottom__img rellax-img" data-rellax-percentage="0.5"
+    <div class="city-history-bottom__img rellax-img history-right-img" data-rellax-percentage="0.5"
          style="background-image: url('/assets/img/tmn-bottom.jpg')"></div>
 </div>
 <div class="history-after history-after-big container">
@@ -220,5 +219,76 @@
             </div>
         </div>
     </div>
+</div>
+<div class="container">
+    <div class="city" style="background-image: url('/assets/img/tblsk.svg')">
+        <h1 class="city__title">Тобольск</h1>
+        <div class="city__description"> По своим философским взглядам Дезами был материалистом и атеистом,
+            последователем Гельвеция, однако знак философски трансформирует из ряда вон выходящий предмет
+            деятельности.
+        </div>
+    </div>
+</div>
+<div class="city-about">
+    <div class="city-about__left">Тобольск – духовная столица Сибири</div>
+    <div class="city-about__right">
+        Тобольск находится в 260 км от Тюмени. Сегодня город является сердцем познавательного туризма в регионе и
+        крупным промышленным центром страны в области газохимии. Тобольск – это пример идеального сочетания
+        духовного начала и промышленного производства в едином городском пространстве.
+    </div>
+</div>
+<div class="container">
+    <div class="video-container js-wider">
+        <video loop autoplay muted>
+            <source src="/assets/video/tmn.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+<div class="city-history-top bg-silver">
+    <div class="city-history-top__page">История</div>
+    <!--    <img src="/assets/img/tmn-top.jpg" alt="" class="city-history-top__img">-->
+    <div class="city-history-top__img rellax-img history-left-img" data-rellax-percentage="0.5"
+         style="background-image: url('/assets/img/tblsk-top.jpg')"></div>
+    <div class="city-history-top__title">Тобольск всего на год младше областной столицы
+    </div>
+    <div class="city-history-top__description center-description">
+        Город был основан в 1587 году недалеко от места, где произошло сражение дружины Ермака с войском Кучума,
+        ознаменовавшееся присоединением к России Сибирского ханства. В 1708 году Тобольск стал центром самой крупной
+        в стране – Сибирской губернии, простиравшейся от Уральских гор до Тихого океана. Здесь был возведен первый и
+        единственный каменный кремль в Сибири.
+    </div>
+</div>
+<div class="city-history-bottom bg-silver">
+    <!--    <img src="/assets/img/tmn-bottom.jpg" alt="" class="city-history-bottom__img">-->
+
+    <div class="city-history-bottom__description">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Сегодня в городе активно развивается познавательный, паломнический и
+        событийный туризм. Посмотреть на древние святыни – Знаменский кафедральный собор Тобольского кремля,
+        Ильинский и Абалакский монастыри и другие духовные объекты – верующие приезжают со всех уголков страны.
+        Любители ярких впечатлений не пропускают фестиваль исторической реконструкции Абалакское поле, а ценители
+        прекрасного отмечают Лето в Тобольском кремле.
+        <br><br><br><br><br>
+        Город также вошел в список городов, через которые пройдет «Императорский маршрут» – реконструкция последнего
+        пути Николая II и семьи Романовых к месту казни.
+    </div>
+    <div class="city-history-bottom__img rellax-img history-right-img" data-rellax-percentage="0.1"
+         style="background-image: url('/assets/img/tblsk-bottom.jpg')"></div>
+</div>
+<div class="history-after bg-silver">
+    <div class="history-after__text">
+        Тобольск подарил нам великих личностей
+    </div>
+</div>
+<div class="history-additional bg-silver">
+    <div class="history-additional__image history-left-img rellax-img"
+         style="background-image: url('/assets/img/tblsk-alex.jpg')" data-rellax-percentage="0.5"></div>
+    <div class="history-additional__description center-description"> Тобольск подарил нам известного композитора
+        Александра Алябьева и
+        великого химика Дмитрия Менделеева. Примечательно, что к чести последнего в наши дни именно нефтехимическая
+        промышленность получила большой импульс к развитию. Сегодня здесь возводится крупнейший мировой комплекс в
+        этой области.
+    </div>
+    <div class="history-additional__image--right history-right-img rellax-img"
+         style="background-image: url('/assets/img/tblsk-mend.jpg')" data-rellax-percentage="0.5"></div>
 </body>
 </html>
