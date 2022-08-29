@@ -24,7 +24,7 @@ $(function () {
             this.$active = $wrapper.find(".slider .city__facts--slider-item").eq(currentSlideIndex);
             this.$active.addClass("slide-active");
             $(window).on("scroll", function () {
-                if (scroll > $wrapper.offset().top && !isScrolling) {
+                if (scroll > thisSlider.$wrapper.offset().top && !isScrolling) {
                     activeSliderIndex = oSliders.indexOf(thisSlider); /* незачем использовать */
                     if (scroll - scrollPrev > 200) {
                         thisSlider.next();
@@ -40,15 +40,14 @@ $(function () {
                 isScrolling = true;
                 let range = this.$wrapper.offset().top + verticalHeight * $slide.index();
                 this.$active.removeClass("slide-active");
-                this.$active = $slide;  /* works here */
-                $slide.addClass("slide-active");
                 $("html").animate({
                     scrollTop: range
                 }, 1000, "linear", function () {
                     isScrolling = false;
                     scrollPrev = range;
-                    /* but not here */
                 });
+                this.$active = $slide;
+                $slide.addClass("slide-active");
             }
         }
 
