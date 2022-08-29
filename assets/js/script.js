@@ -5,6 +5,7 @@ $(function () {
         $sliders = $(".js-slider"),
         scrollBarWidth = window.innerWidth - $(window).width(),
         verticalHeight = $(window).outerHeight(),
+        scroll = 0,
         scrollPrev = 0,
         isScrolling = false,
         oSliders = new Array(),
@@ -16,7 +17,6 @@ $(function () {
         $active;
 
         constructor($wrapper) {
-            /* юзать js-slider чтоб получать что-то тут */
             this.$wrapper = $wrapper;
             let thisSlider = this,
                 sliderOffset = $wrapper.find(".slider").offset().top,
@@ -24,8 +24,13 @@ $(function () {
             this.$active = $wrapper.find(".slider .city__facts--slider-item").eq(currentSlideIndex);
             this.$active.addClass("slide-active");
             $(window).on("scroll", function () {
-                if ($(this).scrollTop() > $wrapper.offset().top) {
-                    activeSliderIndex = oSliders.indexOf(thisSlider);
+                if (scroll > $wrapper.offset().top && !isScrolling) {
+                    activeSliderIndex = oSliders.indexOf(thisSlider); /* незачем использовать */
+                    if (scroll - scrollPrev > 200) {
+                        thisSlider.next();
+                    } else if (scroll - scrollPrev < -200) {
+                        thisSlider.previous();
+                    }
                 }
             });
         }
@@ -64,7 +69,7 @@ $(function () {
 
     $(window).on("scroll", function (e) {
 
-        let scroll = $(this).scrollTop();
+        scroll = $(this).scrollTop();
 
         $videos.each(function () {
             let $videos = $(this),
@@ -78,24 +83,8 @@ $(function () {
             }
         });
 
-        $sliders.each(function (index) {
-
-            let $wrapper = $(this),
-                $wrapperOffset = $wrapper.offset().top,
-                $active = $wrapper.find(".slide-active"),
-                sliderOffset = $wrapper.find(".sticky-slider").offset().top;
-
-            if (scrollPrev === 0) {
-                scrollPrev = scroll;
-            }
-
-            if (scroll > $wrapperOffset && !isScrolling) {
-                if (scroll - scrollPrev > 200) {
-                    oSliders[activeSliderIndex].next();
-                } else if (scroll - scrollPrev < -200) {
-                    oSliders[activeSliderIndex].previous();
-                }
-            }
-        });
+        if (scrollPrev === 0) {
+            scrollPrev = scroll;
+        }
     });
 });
