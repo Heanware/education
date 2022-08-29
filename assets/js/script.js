@@ -14,22 +14,29 @@ $(function () {
     class Slider {
 
         $wrapper;
+        wrapperOffset;
         $active;
 
         constructor($wrapper) {
             this.$wrapper = $wrapper;
+            this.wrapperOffset = this.$wrapper.offset().top;
             let thisSlider = this,
                 sliderOffset = $wrapper.find(".slider").offset().top,
-                currentSlideIndex = Math.floor((sliderOffset - $wrapper.offset().top) / verticalHeight);
+                currentSlideIndex = Math.floor((sliderOffset - this.wrapperOffset) / verticalHeight);
             this.$active = $wrapper.find(".slider .city__facts--slider-item").eq(currentSlideIndex);
             this.$active.addClass("slide-active");
             $(window).on("scroll", function () {
-                if (scroll > thisSlider.$wrapper.offset().top && !isScrolling) {
-                    activeSliderIndex = oSliders.indexOf(thisSlider); /* незачем использовать */
+                if (scroll > thisSlider.wrapperOffset &&
+                    scroll < thisSlider.wrapperOffset + parseInt(thisSlider.$wrapper.css("height")) &&
+                    !isScrolling) {
+                    console.log(scroll > thisSlider.wrapperOffset);
                     if (scroll - scrollPrev > 200) {
-                        thisSlider.next();
+
+                        /*     thisSlider.next();*/
+                        thisSlider.scrollSlider(thisSlider.$active.next());
                     } else if (scroll - scrollPrev < -200) {
-                        thisSlider.previous();
+                        /*       thisSlider.previous();*/
+                        thisSlider.scrollSlider(thisSlider.$active.prev());
                     }
                 }
             });
@@ -38,7 +45,7 @@ $(function () {
         scrollSlider($slide) {
             if ($slide.length > 0) {
                 isScrolling = true;
-                let range = this.$wrapper.offset().top + verticalHeight * $slide.index();
+                let range = this.wrapperOffset + verticalHeight * $slide.index();
                 this.$active.removeClass("slide-active");
                 $("html").animate({
                     scrollTop: range
@@ -46,20 +53,22 @@ $(function () {
                     isScrolling = false;
                     scrollPrev = range;
                 });
+                console.log(outerHeight);
                 this.$active = $slide;
                 $slide.addClass("slide-active");
             }
         }
 
-        next() {
-            let $next = this.$active.next();
-            this.scrollSlider($next);
-        }
+        /*
+                next() {
+                    let $next = this.$active.next();
+                    this.scrollSlider($next);
+                }
 
-        previous() {
-            let $prev = this.$active.prev();
-            this.scrollSlider($prev);
-        }
+                previous() {
+                    let $prev = this.$active.prev();
+                    this.scrollSlider($prev);
+                }*/
     }
 
     $sliders.each(function () {
