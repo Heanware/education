@@ -16,11 +16,18 @@ $(function () {
         $active;
 
         constructor($wrapper) {
+            /* юзать js-slider чтоб получать что-то тут */
             this.$wrapper = $wrapper;
-            let $sliderOffset = $wrapper.find(".slider").offset().top,
-                currentSlideIndex = Math.floor(($sliderOffset - $wrapper.offset().top) / verticalHeight);
-            this.$active = $wrapper.find(".slider").children().eq(currentSlideIndex);
+            let thisSlider = this,
+                sliderOffset = $wrapper.find(".slider").offset().top,
+                currentSlideIndex = Math.floor((sliderOffset - $wrapper.offset().top) / verticalHeight);
+            this.$active = $wrapper.find(".slider .city__facts--slider-item").eq(currentSlideIndex);
             this.$active.addClass("slide-active");
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() > $wrapper.offset().top) {
+                    activeSliderIndex = oSliders.indexOf(thisSlider);
+                }
+            });
         }
 
         scrollSlider($slide) {
@@ -83,8 +90,6 @@ $(function () {
             }
 
             if (scroll > $wrapperOffset && !isScrolling) {
-
-                activeSliderIndex = index;
                 if (scroll - scrollPrev > 200) {
                     oSliders[activeSliderIndex].next();
                 } else if (scroll - scrollPrev < -200) {
