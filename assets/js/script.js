@@ -1,13 +1,59 @@
 $(function () {
 
-    let effect = new Rellax(".rellax-img", {speed: 3});
-
-    let $videos = $(".js-wider"),
-        scrollBarWidth = window.innerWidth - $(window).width(),
+    let effect = new Rellax(".rellax-img", {speed: 3}),
+        $videos = $(".js-wider"),
         $sliders = $(".js-slider"),
+        scrollBarWidth = window.innerWidth - $(window).width(),
+        verticalHeight = $(window).outerHeight(),
         scrollPrev = 0,
         isScrolling = false,
-        verticalHeight = $(window).outerHeight();
+        oSliders = new Array(),
+        activeSliderIndex = -1;
+
+    class Slider {
+
+        $wrapper;
+        $active;
+
+        constructor($wrapper) {
+            this.$wrapper = $wrapper;
+            let $sliderOffset = $wrapper.find(".slider").offset().top,
+                currentSlideIndex = Math.floor(($sliderOffset - $wrapper.offset().top) / verticalHeight);
+            this.$active = $wrapper.find(".slider").children().eq(currentSlideIndex);
+            this.$active.addClass("slide-active");
+        }
+
+        scrollSlider($slide) {
+            if ($slide.length > 0) {
+                isScrolling = true;
+                let range = this.$wrapper.offset().top + verticalHeight * $slide.index();
+                this.$active.removeClass("slide-active");
+                this.$active = $slide;  /* works here */
+                $slide.addClass("slide-active");
+                $("html").animate({
+                    scrollTop: range
+                }, 1000, "linear", function () {
+                    isScrolling = false;
+                    scrollPrev = range;
+                    /* but not here */
+                });
+            }
+        }
+
+        next() {
+            let $next = this.$active.next();
+            this.scrollSlider($next);
+        }
+
+        previous() {
+            let $prev = this.$active.prev();
+            this.scrollSlider($prev);
+        }
+    }
+
+    $sliders.each(function () {
+        oSliders.push(new Slider($(this)));
+    })
 
     $(window).on("scroll", function (e) {
 
@@ -24,46 +70,27 @@ $(function () {
                 $video.css("max-width", "1800px");
             }
         });
-        
-        $sliders.each(function () {
-            let $wrapper = $(this),
-                sliderOffset = $wrapper.offset().top,
-                $slider = $wrapper.find(".sticky-slider"),
-                $active = $slider.find(".slide-active"),
-                $slides = $slider.find(".slider").children(),
-                currentSlideIndex = Math.floor(($slider.offset().top - sliderOffset) / verticalHeight);
 
-            if ($active.length <= 0) {
-                $slides.eq(currentSlideIndex).addClass("slide-active");
-            }
+        $sliders.each(function (index) {
+
+            let $wrapper = $(this),
+                $wrapperOffset = $wrapper.offset().top,
+                $active = $wrapper.find(".slide-active"),
+                sliderOffset = $wrapper.find(".sticky-slider").offset().top;
 
             if (scrollPrev === 0) {
                 scrollPrev = scroll;
             }
 
-            if (scroll > sliderOffset && !isScrolling) {
+            if (scroll > $wrapperOffset && !isScrolling) {
 
-                let $next = $active.next(),
-                    $prev = $active.prev();
-
-                if (scroll - scrollPrev > 200 && $next.length > 0) {
-                    scrollSlider(sliderOffset + verticalHeight * $next.index(), $active, $next);
-                } else if (scroll - scrollPrev < -200 && $prev.length > 0) {
-                    scrollSlider(sliderOffset + verticalHeight * $prev.index(), $active, $prev);
+                activeSliderIndex = index;
+                if (scroll - scrollPrev > 200) {
+                    oSliders[activeSliderIndex].next();
+                } else if (scroll - scrollPrev < -200) {
+                    oSliders[activeSliderIndex].previous();
                 }
             }
-        })
-    });
-
-    function scrollSlider(range, $active, $slide) {
-        isScrolling = true;
-        $active.removeClass("slide-active");
-        $slide.addClass("slide-active");
-        $("html").animate({
-            scrollTop: range
-        }, 1000, "linear", function () {
-            isScrolling = false;
-            scrollPrev = range;
         });
-    }
+    });
 });
