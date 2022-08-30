@@ -77,6 +77,5 @@ $(function () {
                 $video.css("max-width", "1800px");
             }
         });
-
     });
 });
