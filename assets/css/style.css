@@ -96,8 +96,8 @@
     height: 1110px;
     background-position: top right;
     background-repeat: no-repeat;
-    padding: 80px 0 0 565px;
-    margin: 200px 0 50px 0;
+    padding: 150px 0 0 565px;
+    margin: 120px 0 50px 0;
 }
 
 .city__header--info-title {
@@ -133,9 +133,17 @@
     margin-bottom: 40px;
 }
 
-.city__history {
+.bg-silver {
     background-color: #f4f4f4;
+}
+
+.city__history {
     padding: 150px 60px 100px 60px;
+}
+
+.history-additional {
+    padding: 0 60px 240px 60px;
+    margin-bottom: 290px;
 }
 
 .city__history--top, .city__history--bottom {
@@ -153,6 +161,7 @@
 
 .city__history--title {
     margin-bottom: 60px;
+    font-size: 16px;
 }
 
 .city__history--top-title {
@@ -164,6 +173,25 @@
     margin: 0 0 75px 690px;
 }
 
+.city__history--top-img {
+    position: absolute;
+    width: 765px;
+    height: 770px;
+    top: 0;
+}
+
+.city__history--bottom-img {
+    position: absolute;
+    width: 900px;
+    height: 750px;
+    right: 0;
+}
+
+.history-additional__small-img {
+    width: 450px;
+    height: 450px;
+}
+
 .center-description {
     margin-left: 50%;
     font-size: 18px;
@@ -171,33 +199,33 @@
     line-height: 25px;
 }
 
-.history-left-img {
-    position: absolute;
-    width: 765px;
-    height: 770px;
-    top: 0;
-}
-
-.history-right-img {
-    position: absolute;
-    width: 900px;
-    height: 750px;
-    right: 60px;
-}
-
 .city__history--bottom-description {
     max-width: 500px;
+    padding-bottom: 200px;
+}
+
+.city__history--bottom-description-title {
+    font-size: 60px;
+    margin-bottom: 75px;
+}
+
+.history-additional {
+    padding-top: 0;
 }
 
 .city__advantage {
     text-align: center;
     height: unset;
     font-size: 47px;
-    padding: 300px 0;
+    padding: 200px 0;
 }
 
 .city-advantage-big {
     padding: 400px 0 300px 0;
+}
+
+.city__advantage-empty {
+    padding: 200px 0;
 }
 
 .city__advantage--text {
@@ -208,27 +236,10 @@
     max-width: 930px;
 }
 
-.history-additional {
-    padding: 150px 60px 390px 60px;
-    position: relative;
-
-}
-
-.history-additional__image {
-    top: 0;
-}
-
-.history-additional__image--right {
-    width: 450px;
-    height: 450px;
-    margin-top: 170px;
-}
-
 .city__facts--slider-wrapper {
     width: 100%;
     position: relative;
 }
-
 
 .city__facts--slider {
     position: sticky;
