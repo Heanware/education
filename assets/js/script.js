@@ -17,10 +17,10 @@ $(function () {
         constructor($wrapper) {
             this.$wrapper = $wrapper;
             this.wrapperOffset = this.$wrapper.offset().top;
-            this.scrollPrev = this.wrapperOffset;
             let thisSlider = this,
                 sliderOffset = $wrapper.find(".slider").offset().top,
                 currentSlideIndex = Math.floor((sliderOffset - this.wrapperOffset) / verticalHeight);
+            this.scrollPrev = sliderOffset;
             this.$active = $wrapper.find(".slider .city__facts--slider-item").eq(currentSlideIndex);
             this.$active.addClass("slide-active");
             $(window).on("scroll", function () {
@@ -61,8 +61,7 @@ $(function () {
         })
     }, 100);
 
-
-    $(window).on("scroll", function (e) {
+    $(window).on("scroll", function () {
 
         let scroll = $(this).scrollTop();
 
