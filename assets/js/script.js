@@ -10,12 +10,16 @@ class Slider {
     wrapperOffset;
     $active;
     scrollPrev;
-    verticalHeight
+    verticalHeight;
+    slideChangeSpeed;
+    slideChangeOffset
 
-    constructor($wrapper, verticalHeight) {
+    constructor($wrapper, verticalHeight, slideChangeSpeed, slideChangeOffset) {
         this.$wrapper = $wrapper;
         this.wrapperOffset = this.$wrapper.offset().top;
-        this.verticalHeight = verticalHeight
+        this.verticalHeight = verticalHeight;
+        this.slideChangeSpeed = slideChangeSpeed;
+        this.slideChangeOffset = slideChangeOffset;
         let thisSlider = this,
             sliderOffset = $wrapper.find(".slider").offset().top,
             currentSlideIndex = Math.floor((sliderOffset - this.wrapperOffset) / this.verticalHeight);
@@ -27,9 +31,9 @@ class Slider {
             if (scroll > thisSlider.wrapperOffset &&
                 scroll < thisSlider.wrapperOffset + parseInt(thisSlider.$wrapper.css("height")) &&
                 !isScrolling) {
-                if (scroll - thisSlider.scrollPrev > slideChangeOffset) {
+                if (scroll - thisSlider.scrollPrev > thisSlider.slideChangeOffset) {
                     thisSlider.scrollSlider(thisSlider.$active.next());
-                } else if (scroll - thisSlider.scrollPrev < -slideChangeOffset) {
+                } else if (scroll - thisSlider.scrollPrev < -thisSlider.slideChangeOffset) {
                     thisSlider.scrollSlider(thisSlider.$active.prev());
                 }
             }
@@ -44,7 +48,7 @@ class Slider {
             this.$active.removeClass("slide-active");
             $("html").animate({
                 scrollTop: range
-            }, slideChangeSpeed, "linear", function () {
+            }, thisSlider.slideChangeSpeed, "linear", function () {
                 isScrolling = false;
                 thisSlider.scrollPrev = range;
             });
@@ -63,7 +67,7 @@ $(function () {
 
     setTimeout(function () {
         $sliders.each(function () {
-            new Slider($(this), verticalHeight);
+            new Slider($(this), verticalHeight, slideChangeSpeed, slideChangeOffset);
         })
     }, 100);
 
