@@ -3,37 +3,56 @@ let isScrolling = false,
 
 const videoBeforeAnimation = 300,
     slideChangeSpeed = 1000,
-    slideChangeOffset = 200;
+    slideChangeOffset = 210;
 
 class Slider {
     $wrapper;
     wrapperOffset;
     $active;
     scrollPrev;
-    verticalHeight
+    verticalHeight;
+    slideChangeSpeed;
+    slideChangeOffset;
+    isSlideSetActive = false;
 
-    constructor($wrapper, verticalHeight) {
+    constructor($wrapper, verticalHeight, slideChangeSpeed, slideChangeOffset) {
         this.$wrapper = $wrapper;
-        this.wrapperOffset = this.$wrapper.offset().top;
-        this.verticalHeight = verticalHeight
+        this.verticalHeight = verticalHeight;
+        this.slideChangeSpeed = slideChangeSpeed;
+        this.slideChangeOffset = slideChangeOffset;
         let thisSlider = this,
-            sliderOffset = $wrapper.find(".slider").offset().top,
-            currentSlideIndex = Math.floor((sliderOffset - this.wrapperOffset) / this.verticalHeight);
-        this.scrollPrev = sliderOffset;
-        this.$active = $wrapper.find(".slider .city__facts--slider-item").eq(currentSlideIndex);
-        this.$active.addClass("slide-active");
-        $(window).on("scroll", function () {
-            let scroll = $(this).scrollTop();
-            if (scroll > thisSlider.wrapperOffset &&
-                scroll < thisSlider.wrapperOffset + parseInt(thisSlider.$wrapper.css("height")) &&
-                !isScrolling) {
-                if (scroll - thisSlider.scrollPrev > slideChangeOffset) {
-                    thisSlider.scrollSlider(thisSlider.$active.next());
-                } else if (scroll - thisSlider.scrollPrev < -slideChangeOffset) {
-                    thisSlider.scrollSlider(thisSlider.$active.prev());
+            sliderOffset = $wrapper.find(".slider").offset().top;
+
+        $(window).on("scroll", function (e) {
+                let scrollTop = $(this).scrollTop();
+                thisSlider.wrapperOffset = thisSlider.$wrapper.offset().top;
+                console.log("wrapper offset " + thisSlider.wrapperOffset);
+                if (!thisSlider.isSlideSetActive) {
+                    let currentSlideIndex = Math.floor((sliderOffset - thisSlider.wrapperOffset) / thisSlider.verticalHeight);
+                    if (currentSlideIndex < 0) {
+                        currentSlideIndex = 0;
+                    }
+                    thisSlider.setSlideActive(currentSlideIndex);
+                    thisSlider.scrollPrev = thisSlider.wrapperOffset + thisSlider.verticalHeight * thisSlider.$active.index();
+                }
+                if (scrollTop > thisSlider.wrapperOffset &&
+                    scrollTop < thisSlider.wrapperOffset + parseInt(thisSlider.$wrapper.css("height")) &&
+                    !isScrolling) {
+                    if (scrollTop - thisSlider.scrollPrev > thisSlider.slideChangeOffset) {
+                        thisSlider.scrollSlider(thisSlider.$active.next());
+                    } else if (scrollTop - thisSlider.scrollPrev < -thisSlider.slideChangeOffset) {
+                        thisSlider.scrollSlider(thisSlider.$active.prev());
+                    }
                 }
             }
-        });
+        );
+        $(window).trigger("scroll");
+    }
+
+    setSlideActive(currentSlideIndex) {
+        this.$active = this.$wrapper.find(".slider .city__facts--slider-item").eq(currentSlideIndex);
+        this.$active.addClass("slide-active");
+        this.isSlideSetActive = true;
     }
 
     scrollSlider($slide) {
@@ -44,7 +63,7 @@ class Slider {
             this.$active.removeClass("slide-active");
             $("html").animate({
                 scrollTop: range
-            }, slideChangeSpeed, "linear", function () {
+            }, thisSlider.slideChangeSpeed, "linear", function () {
                 isScrolling = false;
                 thisSlider.scrollPrev = range;
             });
@@ -55,20 +74,20 @@ class Slider {
 }
 
 $(function () {
+
     let effect = new Rellax(".rellax-img", {speed: 3}),
         $videos = $(".js-wider"),
         $sliders = $(".js-slider"),
         scrollBarWidth = window.innerWidth - $(window).width(),
         verticalHeight = $(window).outerHeight();
 
-    setTimeout(function () {
-        $sliders.each(function () {
-            new Slider($(this), verticalHeight);
-        })
-    }, 100);
+    $sliders.each(function () {
+        new Slider($(this), verticalHeight, slideChangeSpeed, slideChangeOffset);
+    })
 
     $(window).on("scroll", function () {
         let scroll = $(this).scrollTop();
+        console.log("SCROLL " + scroll);
         $videos.each(function () {
             let $videos = $(this),
                 offset = $videos.offset().top,

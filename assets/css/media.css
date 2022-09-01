@@ -1,0 +1,51 @@
+@media (max-width: 1600px) {
+    .container {
+        max-width: 1520px;
+    }
+
+    .cities-menu {
+        grid-template-rows: repeat(2, 340px);
+    }
+
+    .cities-menu__item {
+        padding: 30px 0 0 40px;
+    }
+
+    .cities-menu__item:first-child {
+        padding: 85px 250px 0 105px;
+    }
+
+    .cities-menu__item--description {
+        font-size: 14px;
+        margin: 20px 0 55px 0;
+    }
+
+    .city__header-wrapper {
+        margin: 150px 0 0 0;
+        background-size: 1075px 945px;
+    }
+
+    .city__header--info {
+        padding: 60px 0 530px 460px;
+    }
+
+    .city__header--about {
+        padding: 0 0 240px 0;
+    }
+
+    .city__video--wrapper {
+        height: 900px;
+    }
+
+    .city__video--wrapper video {
+        max-width: 1520px;
+    }
+
+    .city__history {
+        padding: 130px 40px 100px 40px;
+    }
+    .city__history--top-img{
+        width: 576px;
+        height: 580px;
+    }
+}
