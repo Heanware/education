@@ -79,7 +79,7 @@
 }
 
 .city__header-wrapper {
-    margin: 200px 0 0 0;
+    margin-top: 200px;
 }
 
 .city__header {
@@ -88,7 +88,7 @@
 }
 
 .city__header--info {
-    padding: 110px 0 730px 565px;
+    padding: 110px 0 730px 31%;
 }
 
 .city__header--info-title {
@@ -172,13 +172,13 @@
     font-size: 60px;
     mix-blend-mode: hard-light;
     color: #232323;
-    max-width: 760px;
     text-transform: uppercase;
-    margin: 0 0 75px 690px;
+    padding: 0 20% 0 38%;
 }
 
 .city__history--top-img {
     position: absolute;
+    background-size: cover;
     width: 765px;
     height: 770px;
     top: 0;
@@ -186,12 +186,14 @@
 
 .city__history--bottom-img {
     position: absolute;
+    background-size: cover;
     width: 900px;
     height: 750px;
     right: 0;
 }
 
 .history-additional__small-img {
+    background-size: cover;
     width: 450px;
     height: 450px;
 }
@@ -201,6 +203,7 @@
     font-size: 18px;
     max-width: 600px;
     line-height: 25px;
+    padding-top: 75px;
 }
 
 .city__history--bottom-description {
@@ -211,6 +214,7 @@
 .city__history--bottom-description-title {
     font-size: 60px;
     margin-bottom: 75px;
+    text-transform: uppercase;
 }
 
 .city__advantage {
@@ -246,7 +250,7 @@
     top: 0vh;
     height: 100vh;
     overflow: hidden;
-    padding: 235px 84px 235px 184px;
+    padding: 235px 84px 235px 260px;
 }
 
 .city__facts--slider-items {
@@ -257,6 +261,8 @@
 
 .city__facts--slider-item {
     position: absolute;
+    display: flex;
+    align-items: center;
     width: 100%;
     height: 100%;
     opacity: 0;
@@ -291,6 +297,7 @@
     position: absolute;
     display: inline-block;
     z-index: 3;
+    left: 0;
 }
 
 .slide-active > .city__facts--slider-item-title,
@@ -302,27 +309,25 @@
 .city__facts--slider-item-title {
     font-size: 60px;
     text-transform: uppercase;
+    overflow-x: visible;
+    margin-top: -270px;
+    max-width: 370px;
+    white-space: nowrap;
     display: inline-block;
     opacity: 0;
-    margin-top: 75px;
     transform: translateX(-100%);
     transition: opacity 0.5s ease-in-out, transform 0.3s 0.5s ease-in-out;
 }
 
 .city__facts--slider-item-image {
-    position: absolute;
     display: inline-block;
     width: 534px;
     height: 530px;
-    margin: auto;
-    left: 0;
-    right: 0;
-    z-index: -2;
+    margin-right: 60px;
 }
 
 .city__facts--slider-item-description {
     max-width: 430px;
-    margin-left: auto;
     transform: translateX(110%);
     opacity: 0;
     transition: opacity 0.5s ease-in-out, transform 0.3s 0.5s ease-in-out;

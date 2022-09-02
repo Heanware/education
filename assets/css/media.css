@@ -21,7 +21,11 @@
     }
 
     .city__header-wrapper {
-        margin: 150px 0 0 0;
+        margin: 150px auto 0 auto;
+        background-size: 1075px 945px;
+    }
+
+    .city__header {
         background-size: 1075px 945px;
     }
 
@@ -44,8 +48,53 @@
     .city__history {
         padding: 130px 40px 100px 40px;
     }
-    .city__history--top-img{
+
+    .city__history--top {
+        padding-top: 150px;
+        padding-bottom: 130px;
+    }
+
+    .city__history--top-img {
         width: 576px;
         height: 580px;
+    }
+
+    .city__history--top-title {
+        padding-left: 33%;
+        padding-right: 18%;
+    }
+
+    .city__history--bottom-description {
+        padding-bottom: 100px;
+        max-width: 600px;
+    }
+
+    .city__history--bottom-img {
+        width: 760px;
+        height: 633px;
+    }
+
+    .history-additional__small-img {
+        width: 344px;
+        height: 344px;
+    }
+
+    .city-advantage-big {
+        padding: 250px 0;
+    }
+
+    .city__advantage-empty {
+        padding: 130px 0;
+    }
+
+    .city__facts--slider {
+        padding: 165px 0 165px 170px;
+        height: 62vh;
+    }
+
+    .city__facts--slider-item-image {
+        width: 474px;
+        height: 470px;
+        margin-left: 26%;
     }
 }

@@ -22,7 +22,6 @@ class Slider {
         this.slideChangeOffset = slideChangeOffset;
         let thisSlider = this,
             sliderOffset = $wrapper.find(".slider").offset().top;
-
         $(window).on("scroll", function (e) {
                 let scrollTop = $(this).scrollTop();
                 thisSlider.wrapperOffset = thisSlider.$wrapper.offset().top;
@@ -87,7 +86,6 @@ $(function () {
 
     $(window).on("scroll", function () {
         let scroll = $(this).scrollTop();
-        console.log("SCROLL " + scroll);
         $videos.each(function () {
             let $videos = $(this),
                 offset = $videos.offset().top,
