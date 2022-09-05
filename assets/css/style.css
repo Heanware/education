@@ -152,6 +152,7 @@
 
 .city__history {
     padding: 150px 0 0 0;
+    color: #232323;
 }
 
 .history-additional {
@@ -207,17 +208,22 @@
     height: 450px;
 }
 
-.center-description {
+.city__history--top-description {
     margin-left: 50%;
     font-size: 18px;
     max-width: 600px;
     line-height: 25px;
     padding-top: 75px;
+    mix-blend-mode: hard-light;
+    z-index: 1;
 }
 
 .city__history--bottom-description {
     max-width: 500px;
     height: 510px;
+    font-size: 18px;
+    mix-blend-mode: hard-light;
+    z-index: 1;
 }
 
 .city__history--bottom-description-title {
