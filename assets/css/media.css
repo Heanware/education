@@ -114,5 +114,9 @@
     .city__facts--slider-item-description{
         padding-left: 60px;
     }
-
+}
+@media (max-width: 1320px){
+    .city__header--info{
+        align-self: flex-start;
+    }
 }

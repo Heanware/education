@@ -108,6 +108,7 @@
     font-size: 18px;
     max-width: 530px;
     margin-top: 50px;
+    text-indent: 30px;
 }
 
 .city__header--about {
@@ -126,6 +127,7 @@
 
 .city__header--about-right {
     font-size: 24px;
+    text-indent: 30px;
 }
 
 .city__video--wrapper {
@@ -216,20 +218,23 @@
     padding-top: 75px;
     mix-blend-mode: hard-light;
     z-index: 1;
+    text-indent: 30px;
 }
 
 .city__history--bottom-description {
-    max-width: 500px;
+    max-width: 600px;
     height: 510px;
     font-size: 18px;
     mix-blend-mode: hard-light;
     z-index: 1;
+    text-indent: 30px;
 }
 
 .city__history--bottom-description-title {
     font-size: 60px;
     margin-bottom: 75px;
     text-transform: uppercase;
+    text-indent: 0;
 }
 
 .city__advantage, .city__advantage-empty {
@@ -348,5 +353,6 @@
     padding-left: 65px;
     transform: translateX(110%);
     opacity: 0;
+    text-indent: 30px;
     transition: opacity 0.5s ease-in-out, transform 0.3s 0.5s ease-in-out;
 }
