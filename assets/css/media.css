@@ -42,16 +42,12 @@
         padding-right: 60px;
     }
 
-    .city__video--wrapper {
-        height: 900px;
-    }
-
     .city__video--wrapper video {
         max-width: calc(100vw - 80px);;
     }
 
     .city__history {
-        padding: 130px 40px 100px 40px;
+        padding: 130px 0 100px 0;
     }
 
     .city__history--top {
@@ -62,9 +58,6 @@
     .city__history--top-img {
         width: 576px;
         height: 580px;
-    }
-
-    .city__history--top-title {
     }
 
     .city__history--bottom-description {
@@ -120,6 +113,10 @@
 }
 
 @media (max-width: 1024px) {
+    .container {
+        padding: 0 32px;
+    }
+
     .cities-menu {
         grid-template-rows: repeat(2, 334px);
     }
@@ -148,4 +145,91 @@
         font-size: 14px;
     }
 
+    .city__header {
+        background-size: 960px 845px;
+        background-position-x: 200px;
+    }
+
+    .city__header--info {
+        max-width: 390px;
+        align-self: center;
+    }
+
+    .city__header--info-title {
+        font-size: 75px;
+    }
+
+    .city__header--info-description {
+        font-size: 14px;
+    }
+
+    .city__header--about {
+        padding: 0 0 150px 0;
+    }
+
+    .city__header--about-left {
+        font-size: 35px;
+    }
+
+    .city__header--about-right {
+        font-size: 18px;
+    }
+
+    .city__history--title {
+        font-size: 12px;
+    }
+
+
+    .city__history--top {
+        padding-bottom: 100px;
+    }
+
+    .city__history--top-img {
+        width: 435px;
+        height: 438px;
+    }
+
+    .city__history--top-title {
+        font-size: 32px;
+        max-width: 350px;
+        transform: translateX(90px);
+    }
+
+    .city__history--top-description,
+    .city__history--bottom-description {
+        font-size: 14px;
+        max-width: 465px;
+    }
+
+    .city__history--bottom-img {
+        width: 465px;
+        height: 387px;
+    }
+
+    .city-advantage-big {
+        font-size: 28px;
+    }
+
+    .city-advantage-big {
+        padding: 150px 0;
+    }
+
+    .city__facts--slider {
+        padding: 0 0 0 100px;
+    }
+
+    .city__facts--slider-item-title {
+        font-size: 32px;
+        top: 35%;
+    }
+
+    .city__facts--slider-item-image {
+        min-width: 330px;
+        height: 383px;
+    }
+
+    .city__facts--slider-item-description {
+        font-size: 12px;
+        min-width: 270px;
+    }
 }

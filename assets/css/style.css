@@ -136,7 +136,7 @@
 
 .city__video--wrapper {
     position: relative;
-    height: 1080px;
+    padding-top: 56.25%;
     width: 100%;
 }
 
@@ -162,7 +162,7 @@
 }
 
 .history-additional {
-    padding: 0 60px 240px 60px;
+    padding: 0 0 240px 0;
     margin-bottom: 290px;
 }
 
@@ -352,7 +352,7 @@
     margin-left: 26%;
     height: 530px;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
 }
 
