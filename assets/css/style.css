@@ -50,8 +50,11 @@
 
 .cities-menu__item--description {
     margin: 30px 0 60px 0;
+    max-width: 350px;
     margin-top: 30px;
     margin-bottom: 60px;
+    font-size: 14px;
+    text-indent: 30px;
 }
 
 .cities-menu__item--button {
@@ -67,7 +70,7 @@
     grid-column: span 2;
     grid-row: span 2;
     height: unset;
-    padding: 150px 340px 0 175px;
+    padding: 150px 0 0 175px;
 }
 
 .cities-menu__item:first-child > .cities-menu__item--name {
@@ -77,6 +80,7 @@
 
 .cities-menu__item:first-child > .cities-menu__item--description {
     margin-bottom: 70px;
+    font-size: 18px;
 }
 
 .city__header-wrapper {
@@ -168,6 +172,8 @@
 
 .city__history--top {
     padding: 270px 0 150px 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .city__history--bottom {
@@ -182,10 +188,12 @@
 
 .city__history--top-title {
     font-size: 60px;
+    align-self: center;
     mix-blend-mode: hard-light;
     color: #232323;
     text-transform: uppercase;
-    padding: 0 20% 0 38%;
+    max-width: 754px;
+    transform: translateX(155px);
 }
 
 .city__history--top-img {
