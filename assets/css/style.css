@@ -143,7 +143,7 @@
     left: 50%;
     right: 0;
     width: 100vw;
-    max-width: 1800px;
+    max-width: calc(100vw - 120px);
     transform: translate(-50%, 0);
     transition: max-width 1s;
 }

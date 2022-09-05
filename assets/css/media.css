@@ -48,7 +48,7 @@
     }
 
     .city__video--wrapper video {
-        max-width: 1520px;
+        max-width: calc(100vw - 80px);;
     }
 
     .city__history {
@@ -98,12 +98,11 @@
     }
 
     .city__facts--slider {
-        padding: 165px 0 165px 150px;
-        height: 62vh;
+        padding: 0 84px 0 84px;
     }
 
     .city__facts--slider-item-title {
-        top: 15%;
+        top: 30%;
     }
 
     .city__facts--slider-item-image {
