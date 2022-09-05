@@ -335,16 +335,17 @@
 
 .city__facts--slider-item-image {
     display: inline-block;
-    width: 534px;
+    min-width: 534px;
+    margin-left: 26%;
     height: 530px;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
 }
 
 .city__facts--slider-item-description {
-    width: 500px;
-    padding-left: 60px;
+    min-width: 300px;
+    padding-left: 65px;
     transform: translateX(110%);
     opacity: 0;
     transition: opacity 0.5s ease-in-out, transform 0.3s 0.5s ease-in-out;

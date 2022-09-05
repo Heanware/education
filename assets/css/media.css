@@ -107,9 +107,12 @@
     }
 
     .city__facts--slider-item-image {
-        width: 474px;
+        min-width: 474px;
         height: 470px;
         margin-left: 26%;
+    }
+    .city__facts--slider-item-description{
+        padding-left: 60px;
     }
 
 }
