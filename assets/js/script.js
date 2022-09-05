@@ -25,7 +25,6 @@ class Slider {
         $(window).on("scroll", function (e) {
                 let scrollTop = $(this).scrollTop();
                 thisSlider.wrapperOffset = thisSlider.$wrapper.offset().top;
-                console.log("wrapper offset " + thisSlider.wrapperOffset);
                 if (!thisSlider.isSlideSetActive) {
                     let currentSlideIndex = Math.floor((sliderOffset - thisSlider.wrapperOffset) / thisSlider.verticalHeight);
                     if (currentSlideIndex < 0) {

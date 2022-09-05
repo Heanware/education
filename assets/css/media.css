@@ -1,6 +1,7 @@
 @media (max-width: 1600px) {
     .container {
-        max-width: 1520px;
+        max-width: 1600px;
+        padding: 0 40px;
     }
 
     .cities-menu {
@@ -30,11 +31,16 @@
     }
 
     .city__header--info {
-        padding: 60px 0 530px 460px;
+        min-height: 900px;
+        max-width: 600px;
     }
 
     .city__header--about {
         padding: 0 0 240px 0;
+    }
+
+    .city__header--about > div {
+        padding-right: 60px;
     }
 
     .city__video--wrapper {
@@ -60,13 +66,13 @@
     }
 
     .city__history--top-title {
-        padding-left: 33%;
-        padding-right: 18%;
+        padding-left: 35%;
+        padding-right: 13%;
     }
 
     .city__history--bottom-description {
-        padding-bottom: 100px;
         max-width: 600px;
+        height: 410px;
     }
 
     .city__history--bottom-img {
@@ -79,6 +85,10 @@
         height: 344px;
     }
 
+    .city__advantage {
+        padding: 0 200px;
+    }
+
     .city-advantage-big {
         padding: 250px 0;
     }
@@ -88,8 +98,12 @@
     }
 
     .city__facts--slider {
-        padding: 165px 0 165px 170px;
+        padding: 165px 0 165px 150px;
         height: 62vh;
+    }
+
+    .city__facts--slider-item-title {
+        top: 15%;
     }
 
     .city__facts--slider-item-image {
@@ -97,4 +111,5 @@
         height: 470px;
         margin-left: 26%;
     }
+
 }
