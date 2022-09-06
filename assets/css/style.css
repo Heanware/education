@@ -276,8 +276,8 @@
     align-self: center;
 }
 
-.city__advantage-big .city__advantage--text {
-    max-width: 930px;
+.city__advantage--text {
+    max-width: 950px;
 }
 
 .city__facts--slider-wrapper {
