@@ -21,23 +21,46 @@ class Slider {
         this.slideChangeSpeed = slideChangeSpeed;
         this.slideChangeOffset = slideChangeOffset;
         let thisSlider = this,
-            sliderOffset = $wrapper.find(".slider").offset().top,
-            currentSlideIndex = Math.floor((sliderOffset - this.wrapperOffset) / this.verticalHeight);
-        this.scrollPrev = sliderOffset;
-        this.$active = $wrapper.find(".slider .city__facts--slider-item").eq(currentSlideIndex);
-        this.$active.addClass("slide-active");
+            sliderOffset = $wrapper.find(".slider").offset().top;
         $(window).on("scroll", function () {
-            let scroll = $(this).scrollTop();
-            if (scroll > thisSlider.wrapperOffset &&
-                scroll < thisSlider.wrapperOffset + parseInt(thisSlider.$wrapper.css("height")) &&
-                !isScrolling) {
-                if (scroll - thisSlider.scrollPrev > thisSlider.slideChangeOffset) {
-                    thisSlider.scrollSlider(thisSlider.$active.next());
-                } else if (scroll - thisSlider.scrollPrev < -thisSlider.slideChangeOffset) {
-                    thisSlider.scrollSlider(thisSlider.$active.prev());
+                let scrollTop = $(this).scrollTop();
+                thisSlider.wrapperOffset = thisSlider.$wrapper.offset().top;
+                if (!thisSlider.isSlideSetActive) {
+                    let currentSlideIndex = Math.floor((sliderOffset - thisSlider.wrapperOffset) / thisSlider.verticalHeight);
+                    if (currentSlideIndex < 0) {
+                        currentSlideIndex = 0;
+                    }
+                    thisSlider.setSlideActive(currentSlideIndex);
+                    thisSlider.scrollPrev = thisSlider.wrapperOffset + thisSlider.verticalHeight * thisSlider.$active.index();
+                }
+                if (isAnchorUsed && scrollTop > thisSlider.wrapperOffset) {
+                    thisSlider.setLastSlideActive();
+                }
+                if (scrollTop > thisSlider.wrapperOffset &&
+                    scrollTop < thisSlider.wrapperOffset + parseInt(thisSlider.$wrapper.css("height")) &&
+                    !isScrolling) {
+                    if (scrollTop - thisSlider.scrollPrev > thisSlider.slideChangeOffset) {
+                        thisSlider.scrollSlider(thisSlider.$active.next());
+                    } else if (scrollTop - thisSlider.scrollPrev < -thisSlider.slideChangeOffset) {
+                        thisSlider.scrollSlider(thisSlider.$active.prev());
+                    }
                 }
             }
-        });
+        );
+        $(window).trigger("scroll");
+    }
+
+    setSlideActive(currentSlideIndex) {
+        this.$active = this.$wrapper.find(".slider .city__facts--slider-item").eq(currentSlideIndex);
+        this.$active.addClass("slide-active");
+        this.isSlideSetActive = true;
+    }
+
+    setLastSlideActive() {
+        this.$active.removeClass("slide-active");
+        this.$active = this.$wrapper.find(".slider .city__facts--slider-item").last();
+        this.$active.addClass("slide-active");
+        this.scrollPrev = this.wrapperOffset + this.verticalHeight * this.$active.index();
     }
 
     scrollSlider($slide) {
@@ -60,6 +83,7 @@ class Slider {
 
 $(function () {
     let effect = new Rellax(".rellax-img", {speed: 3}),
+        $cover = $(".js-anchor-cover"),
         $videos = $(".js-wider"),
         $sliders = $(".js-slider"),
         scrollBarWidth = window.innerWidth - $(window).width(),
@@ -85,4 +109,24 @@ $(function () {
             }
         });
     });
+
+    $sliders.each(function () {
+        new Slider($(this), verticalHeight, slideChangeSpeed, slideChangeOffset);
+    });
+
+    $anchors.on("click", function () {
+        $anchor = $(this);
+        isScrolling = true;
+        $cover.addClass("cover-active");
+        $cover.css("background-color", $anchor.data("color"));
+        $("html").stop().animate({
+            scrollTop: $($anchor.data("href")).offset().top
+        }, 1500, "linear", function () {
+            isAnchorUsed = true;
+            $(window).trigger("scroll");
+            $cover.removeClass("cover-active");
+            isScrolling = false;
+            isAnchorUsed = false;
+        });
+    })
 });

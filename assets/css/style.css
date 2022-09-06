@@ -5,10 +5,18 @@
     box-sizing: border-box;
 }
 
-.city__video--wrapper {
-    position: relative;
-    height: 1080px;
+.anchor-cover {
+    position: fixed;
+    opacity: 0;
+    z-index: -3;
     width: 100%;
+    height: 100%;
+    transition: opacity 0.5s, z-index 0.6s 0s;
+}
+
+.cover-active {
+    opacity: 1;
+    z-index: 3;
 }
 
 .city__video--wrapper video {
@@ -57,8 +65,10 @@
 }
 
 .cities-menu__item--description {
-    margin-top: 30px;
-    margin-bottom: 60px;
+    margin: 30px 0 60px 0;
+    max-width: 350px;
+    font-size: 14px;
+    text-indent: 30px;
 }
 
 .cities-menu__item--button {
@@ -239,7 +249,7 @@
 
 .city__facts--slider {
     position: sticky;
-    top: 0vh;
+    top: 0;
     height: 100vh;
     overflow: hidden;
     padding: 235px 84px 235px 184px;
