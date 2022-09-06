@@ -1,4 +1,5 @@
 let isScrolling = false,
+    isAnchorUsed = false,
     windowWidth = $(window).outerWidth();
 
 const videoBeforeAnimation = 300,
@@ -12,11 +13,11 @@ class Slider {
     scrollPrev;
     verticalHeight;
     slideChangeSpeed;
-    slideChangeOffset
+    slideChangeOffset;
+    isSlideSetActive = false;
 
     constructor($wrapper, verticalHeight, slideChangeSpeed, slideChangeOffset) {
         this.$wrapper = $wrapper;
-        this.wrapperOffset = this.$wrapper.offset().top;
         this.verticalHeight = verticalHeight;
         this.slideChangeSpeed = slideChangeSpeed;
         this.slideChangeOffset = slideChangeOffset;
@@ -82,18 +83,14 @@ class Slider {
 }
 
 $(function () {
+
     let effect = new Rellax(".rellax-img", {speed: 3}),
         $cover = $(".js-anchor-cover"),
         $videos = $(".js-wider"),
         $sliders = $(".js-slider"),
+        $anchors = $(".js-anchor"),
         scrollBarWidth = window.innerWidth - $(window).width(),
         verticalHeight = $(window).outerHeight();
-
-    setTimeout(function () {
-        $sliders.each(function () {
-            new Slider($(this), verticalHeight, slideChangeSpeed, slideChangeOffset);
-        })
-    }, 100);
 
     $(window).on("scroll", function () {
         let scroll = $(this).scrollTop();
@@ -105,7 +102,7 @@ $(function () {
             if (scroll > offset - videoBeforeAnimation) {
                 $video.css("max-width", width + "px");
             } else {
-                $video.css("max-width", "1800px");
+                $video.css("max-width", "calc(100vw - 60px)");
             }
         });
     });
