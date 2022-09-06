@@ -170,12 +170,13 @@
 }
 
 .city__history {
-    padding: 150px 0 100px 0;
+    padding-top: 150px;
+    padding-bottom: 100px;
     color: #232323;
 }
 
-.history-additional {
-    padding: 0 0 240px 0;
+.history__additional {
+    padding-bottom: 240px;
 }
 
 .city__history--top, .city__history--bottom {
@@ -183,7 +184,7 @@
 }
 
 .city__history--top {
-    padding: 270px 0 150px 0;
+    padding: 0 0 150px 0;
     display: flex;
     flex-direction: column;
 }
@@ -199,6 +200,7 @@
 
 .city__history--top-title {
     font-size: 60px;
+    padding-top: 260px;
     align-self: center;
     mix-blend-mode: hard-light;
     color: #232323;
@@ -212,7 +214,6 @@
     background-size: cover;
     width: 765px;
     height: 770px;
-    top: 0;
 }
 
 .city__history--bottom-img {
@@ -223,7 +224,7 @@
     right: 0;
 }
 
-.history-additional__small-img {
+.history__additional--small-img {
     background-size: cover;
     width: 450px;
     height: 450px;
@@ -234,7 +235,7 @@
     font-size: 18px;
     max-width: 600px;
     line-height: 25px;
-    padding-top: 75px;
+    padding-top: 150px;
     mix-blend-mode: hard-light;
     z-index: 1;
     text-indent: 30px;
@@ -242,7 +243,7 @@
 
 .city__history--bottom-description {
     max-width: 600px;
-    height: 510px;
+    min-height: 510px;
     font-size: 18px;
     mix-blend-mode: hard-light;
     z-index: 1;
@@ -266,7 +267,7 @@
     flex-direction: column;
 }
 
-.city-advantage-big {
+.city__advantage-big {
     padding-top: 400px;
     padding-bottom: 300px;
 }
@@ -275,7 +276,7 @@
     align-self: center;
 }
 
-.city-advantage-big .city__advantage--text {
+.city__advantage-big .city__advantage--text {
     max-width: 930px;
 }
 

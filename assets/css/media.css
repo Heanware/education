@@ -21,7 +21,8 @@
     }
 
     .city__header-wrapper {
-        margin: 150px auto 0 auto;
+        margin: 0 auto 0 auto;
+        padding-top: 150px;
         background-size: 1075px 945px;
     }
 
@@ -44,12 +45,15 @@
     }
 
     .city__history {
-        padding: 130px 0 100px 0;
+        padding-bottom: 100px;
     }
 
     .city__history--top {
-        padding-top: 150px;
         padding-bottom: 130px;
+    }
+
+    .city__history--top-title {
+        padding-top: 190px;
     }
 
     .city__history--top-img {
@@ -67,21 +71,31 @@
         height: 633px;
     }
 
-    .history-additional__small-img {
+    .history__additional--small-img {
         width: 344px;
         height: 344px;
+        top: 0;
+    }
+
+    .history__additional {
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
     .city__advantage {
-        padding: 100px 0;
+        padding: 160px 0;
     }
 
-    .city-advantage-big {
+    .city__advantage-big {
         padding: 250px 0;
     }
 
     .city__advantage-empty {
         padding: 130px 0;
+    }
+
+    .city__advantage--text {
+        max-width: 1000px;
     }
 
     .city__facts--slider {
@@ -111,7 +125,8 @@
 
 @media (max-width: 1024px) {
     .container {
-        padding: 0 32px;
+        padding-left: 32px;
+        padding-right: 32px;
     }
 
     .cities-menu {
@@ -151,6 +166,7 @@
     .city__header--info {
         max-width: 390px;
         align-self: center;
+        padding-top: 150px;
     }
 
     .city__header--info-title {
@@ -195,17 +211,43 @@
         max-width: 465px;
     }
 
+    .city__history--top-description {
+        padding-top: 60px;
+    }
+
+    .history__additional--description {
+        padding: 0;
+    }
+
+    .city__history--bottom-description-title {
+        font-size: 32px;
+    }
+
     .city__history--bottom-img {
         width: 465px;
         height: 387px;
     }
 
-    .city-advantage-big {
+    .history__additional--small-img {
+        width: 261px;
+        height: 261px;
+    }
+
+    .city__advantage {
         font-size: 28px;
     }
 
-    .city-advantage-big {
+    .city__advantage-big {
+        font-size: 28px;
         padding: 150px 0;
+    }
+
+    .city__advantage-empty {
+        padding: 25px 0;
+    }
+
+    .city__advantage--text {
+        max-width: 720px;
     }
 
     .city__facts--slider {
