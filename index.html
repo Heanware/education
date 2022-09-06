@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="preload" href="assets/fonts/Manrope-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="assets/fonts/Manrope-Regular.ttf" as="font" type="font/ttf">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/media.css">
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/rellax.js"></script>
-    <!--    <script src="assets/js/script.js"></script>-->
+    <script src="assets/js/script.js"></script>
     <title>Муниципальное образование</title>
 </head>
 <body>
+    <div class="anchor-cover js-anchor-cover"></div>
     <div class="cities-menu">
         <div class="cities-menu__item" style="background-image: url('assets/img/tmn.jpg')">
             <div class="cities-menu__item--name">Тюмень</div>
@@ -25,7 +26,7 @@
             <div class="cities-menu__item--name">Тобольск</div>
             <div class="cities-menu__item--description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Commodi harum illum, ipsum maiores molestias perferendis</div>
-            <button class="cities-menu__item--button">Подробнее</button>
+            <a class="cities-menu__item--button js-anchor" data-href="#tblsk" data-color="#FFCBAA" href="#tblsk">Подробнее</a>
         </div>
         <div class="cities-menu__item" style="background-image: url('assets/img/ishim.jpg')">
             <div class="cities-menu__item--name">Ишим</div>
@@ -51,7 +52,7 @@
             <div class="city__header-wrapper container">
                 <div class="city__header" style="background-image: url('assets/img/tmn-map.svg')">
                     <div class="city__header--info">
-                        <dov class="city__header--info-title">Тюмень</dov>
+                        <div class="city__header--info-title">Тюмень</div>
                         <div class="city__header--info-description">По своим философским взглядам Дезами был
                             материалистом и атеистом, последователем Гельвеция, однако знак философски трансформирует из
                             ряда вон выходящий предмет деятельности.</div>
@@ -81,7 +82,19 @@
                         <div class="city__history--top ">
                             <div class="city__history--top-img rellax-img" data-rellax-percentage="0.5" style="background-image:
                     url('assets/img/tmn-top.jpg')"></div>
-                            <div class="city__history--top-title">Тюмень первый русский город в Сибири</div>
+                            <div class="city__history--top-title">Тюмень первый русский город в Сибири
+                                <!--                                <svg viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg" width="754px" height="234px">
+                                                                    <style>
+                                                                        .small {
+                                                                            font: italic 13px sans-serif;
+                                                                            mix-blend-mode: lighten;
+                                                                            fill: #232323;
+                                                                            font-size: 20px;
+                                                                        }
+                                                                    </style>
+                                                                    <text x="0" y="35" class="small">Тюмень первый русский город в Сибири</text>
+                                                                </svg>-->
+                            </div>
                             <div class="city__history--top-description">Строительство тюменского острога началось 29
                                 июля 1586 года недалеко от Чинги-Туры по указу последнего царя из династии Рюриковичей
                                 Федора Ивановича.<br><br><br>Тюмень развивалась как купеческий город. Здесь возводили
@@ -101,7 +114,7 @@
                                 направления во всех отраслях экономики. <br><br> Город является привлекательным как для
                                 проживания, так и для вложения инвестиций. И неудивительно, ведь здесь активно
                                 развивается промышленность и инфраструктура.</div>
-                            <div class="city__history--bottom-img rellax-img" data-rellax-percentage="0.3" style="background-image: url('assets/img/tmn-bottom.jpg')"></div>
+                            <div class="city__history--bottom-img rellax-img" data-rellax-percentage="0.5" style="background-image: url('assets/img/tmn-bottom.jpg')"></div>
                         </div>
                     </div>
                 </div>
@@ -114,7 +127,7 @@
                 <div class="city__facts--slider-wrapper js-slider" style="height: calc(100vh * 4)">
                     <div class="city__facts--slider sticky-slider">
                         <div class="city__facts--slider-items slider">
-                            <div class="city__facts--slider-item slide-active">
+                            <div class="city__facts--slider-item">
                                 <div class="city__facts--slider-item-title">набережная</div>
                                 <div class="city__facts--slider-item-image" style="background-image: url('assets/img/quey.jpg')">
                                     <div class="city__facts--slider-title">Факты</div>
@@ -167,7 +180,7 @@
                 </div>
             </div>
         </div>
-        <div class="city">
+        <div class="city" id="tblsk">
             <div class="city__header-wrapper container">
                 <div class="city__header" style="background-image: url('assets/img/tblsk-map.svg')">
                     <div class="city__header--info">
@@ -229,9 +242,10 @@
                         Алябьева и великого химика Дмитрия Менделеева. Примечательно, что к чести последнего в наши дни
                         именно нефтехимическая промышленность получила большой импульс к развитию. Сегодня здесь
                         возводится крупнейший мировой комплекс в этой области.</div>
-                    <div class="city__history--bottom-img rellax-img history-additional__small-img" data-rellax-percentage="0.5" style="background-image: url('assets/img/tblsk-mend.jpg')"></div>
+                    <div class="city__history--bottom-img rellax-img history-additional__small-img" data-rellax-percentage="1.5" style="background-image: url('assets/img/tblsk-mend.jpg')"></div>
                 </div>
             </div>
+            <div class="city__advantage-empty"></div>
             <div class="city__facts container">
                 <div class="city__facts--slider-wrapper js-slider" style="height: calc(100vh * 4)">
                     <div class="city__facts--slider sticky-slider">

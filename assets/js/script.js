@@ -1,4 +1,5 @@
 let isScrolling = false,
+    isAnchorUsed = false,
     windowWidth = $(window).outerWidth();
 
 const videoBeforeAnimation = 300,
@@ -33,6 +34,9 @@ class Slider {
                     thisSlider.setSlideActive(currentSlideIndex);
                     thisSlider.scrollPrev = thisSlider.wrapperOffset + thisSlider.verticalHeight * thisSlider.$active.index();
                 }
+                if (isAnchorUsed) {
+                    thisSlider.setLastSlideActive();
+                }
                 if (scrollTop > thisSlider.wrapperOffset &&
                     scrollTop < thisSlider.wrapperOffset + parseInt(thisSlider.$wrapper.css("height")) &&
                     !isScrolling) {
@@ -51,6 +55,13 @@ class Slider {
         this.$active = this.$wrapper.find(".slider .city__facts--slider-item").eq(currentSlideIndex);
         this.$active.addClass("slide-active");
         this.isSlideSetActive = true;
+    }
+
+    setLastSlideActive() {
+        this.$active.removeClass("slide-active");
+        this.$active = this.$wrapper.find(".slider .city__facts--slider-item").last();
+        this.$active.addClass("slide-active");
+        this.scrollPrev = this.wrapperOffset + this.verticalHeight * this.$active.index();
     }
 
     scrollSlider($slide) {
@@ -74,14 +85,12 @@ class Slider {
 $(function () {
 
     let effect = new Rellax(".rellax-img", {speed: 3}),
+        cover = $(".js-anchor-cover"),
         $videos = $(".js-wider"),
         $sliders = $(".js-slider"),
+        $anchors = $(".js-anchor"),
         scrollBarWidth = window.innerWidth - $(window).width(),
         verticalHeight = $(window).outerHeight();
-
-    $sliders.each(function () {
-        new Slider($(this), verticalHeight, slideChangeSpeed, slideChangeOffset);
-    })
 
     $(window).on("scroll", function () {
         let scroll = $(this).scrollTop();
@@ -97,4 +106,29 @@ $(function () {
             }
         });
     });
+
+    $sliders.each(function () {
+        new Slider($(this), verticalHeight, slideChangeSpeed, slideChangeOffset);
+    });
+
+    $anchors.each(function () {
+        $(this).on("click", function () {
+            isScrolling = true;
+            cover.css("z-index", "3");
+            cover.css("background-color", $(this).data("color"));
+            $("html").stop().animate({
+                scrollTop: $($(this).data("href")).offset().top
+            }, 1000, "linear", function () {
+                isAnchorUsed = true;
+                $(window).trigger("scroll");
+                cover.css("background-color", "unset");
+                setTimeout(function () {
+                    cover.css("z-index", "-3");
+                }, 700);
+                isScrolling = false;
+                isAnchorUsed = false;
+            });
+            return false;
+        })
+    })
 });

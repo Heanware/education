@@ -32,9 +32,6 @@
     .city__header--info {
         min-height: 900px;
         max-width: 600px;
-    }
-
-    .city__header--about {
         padding: 0 0 240px 0;
     }
 
@@ -76,7 +73,7 @@
     }
 
     .city__advantage {
-        padding: 0 200px;
+        padding: 100px 0;
     }
 
     .city-advantage-big {
@@ -148,6 +145,7 @@
     .city__header {
         background-size: 960px 845px;
         background-position-x: 200px;
+        padding: 0 0 150px 0;
     }
 
     .city__header--info {
@@ -161,10 +159,6 @@
 
     .city__header--info-description {
         font-size: 14px;
-    }
-
-    .city__header--about {
-        padding: 0 0 150px 0;
     }
 
     .city__header--about-left {
