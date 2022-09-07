@@ -121,6 +121,8 @@
     width: 1255px;
     height: 1104px;
     right: 60px;
+    background-size: cover;
+    background-repeat: no-repeat;
     z-index: -1;
 }
 

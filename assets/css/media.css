@@ -25,8 +25,10 @@
         background-size: 1075px 945px;
     }
 
-    .city__header {
-        background-size: 1075px 945px;
+    .city__header--image {
+        width: 1075px;
+        height: 945px;
+        right: 40px;
     }
 
     .city__header--info {
@@ -52,7 +54,7 @@
     }
 
     .city__history--top-title {
-        padding-top: 10%;
+        padding-top: 20%;
     }
 
     .city__history--top-description {
@@ -169,9 +171,14 @@
     }
 
     .city__header {
-        background-size: 960px 845px;
-        background-position-x: 200px;
         padding: 0 0 150px 0;
+    }
+
+    .city__header--image {
+        width: 960px;
+        height: 845px;
+        right: 40px;
+        background-position: 215px;
     }
 
     .city__header--info {
@@ -305,8 +312,10 @@
         padding-top: 120px;
     }
 
-    .city__header {
-        background-size: 836px 736px;
+    .city__header--image {
+        width: 836px;
+        height: 736px;
+        background-position: 280px;
     }
 
     .city__header--about-left {
