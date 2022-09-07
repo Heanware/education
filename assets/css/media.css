@@ -54,7 +54,7 @@
     }
 
     .city__history--top-title {
-        padding-top: 20%;
+        padding-top: 10%;
     }
 
     .city__history--top-description {
@@ -361,5 +361,8 @@
 
     .city__advantage-big {
         padding: 120px 0;
+    }
+    .city__advantage--text{
+        max-width: 565px;
     }
 }
