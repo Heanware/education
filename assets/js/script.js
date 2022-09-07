@@ -4,7 +4,7 @@ let isScrolling = false,
 
 const videoBeforeAnimation = 300,
     slideChangeSpeed = 1000,
-    slideChangeOffset = 200;
+    slideChangeOffset = 210;
 
 class Slider {
     $wrapper;
@@ -35,6 +35,7 @@ class Slider {
                     thisSlider.scrollPrev = thisSlider.wrapperOffset + thisSlider.verticalHeight * thisSlider.$active.index();
                 }
                 if (isAnchorUsed && scrollTop > thisSlider.wrapperOffset) {
+
                     thisSlider.setLastSlideActive();
                 }
                 if (scrollTop > thisSlider.wrapperOffset &&
@@ -110,6 +111,7 @@ $(function () {
     $sliders.each(function () {
         new Slider($(this), verticalHeight, slideChangeSpeed, slideChangeOffset);
     });
+
 
     $anchors.on("click", function () {
         $anchor = $(this);

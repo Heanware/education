@@ -55,7 +55,6 @@
     .city__history--top-title {
         padding-top: 190px;
     }
-
     .city__history--top-img {
         width: 576px;
         height: 580px;
@@ -70,7 +69,6 @@
         width: 760px;
         height: 633px;
     }
-
     .history__additional--small-img {
         width: 344px;
         height: 344px;
@@ -97,7 +95,6 @@
     .city__advantage--text {
         max-width: 1000px;
     }
-
     .city__facts--slider {
         padding: 0 84px 0 84px;
     }
@@ -166,7 +163,6 @@
     .city__header--info {
         max-width: 390px;
         align-self: center;
-        padding-top: 150px;
     }
 
     .city__header--info-title {
@@ -222,7 +218,6 @@
     .city__history--bottom-description-title {
         font-size: 32px;
     }
-
     .city__history--bottom-img {
         width: 465px;
         height: 387px;

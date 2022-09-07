@@ -200,7 +200,6 @@
 
 .city__history--top-title {
     font-size: 60px;
-    padding-top: 260px;
     align-self: center;
     mix-blend-mode: hard-light;
     color: #232323;
@@ -223,6 +222,7 @@
     height: 750px;
     right: 0;
 }
+
 
 .history__additional--small-img {
     background-size: cover;
