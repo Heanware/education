@@ -14,10 +14,16 @@
 
 .anchor-cover {
     position: fixed;
+    opacity: 0;
+    z-index: -3;
     width: 100%;
     height: 100%;
-    z-index: -3;
-    transition: background-color 0.7s, z-index 0.7s 0s;
+    transition: opacity 0.5s, z-index 0.6s 0s;
+}
+
+.cover-active {
+    opacity: 1;
+    z-index: 3;
 }
 
 .container {
@@ -59,8 +65,6 @@
 .cities-menu__item--description {
     margin: 30px 0 60px 0;
     max-width: 350px;
-    margin-top: 30px;
-    margin-bottom: 60px;
     font-size: 14px;
     text-indent: 30px;
 }
@@ -166,12 +170,13 @@
 }
 
 .city__history {
-    padding: 150px 0 100px 0;
+    padding-top: 150px;
+    padding-bottom: 100px;
     color: #232323;
 }
 
-.history-additional {
-    padding: 0 0 240px 0;
+.history__additional {
+    padding-bottom: 240px;
 }
 
 .city__history--top, .city__history--bottom {
@@ -179,7 +184,7 @@
 }
 
 .city__history--top {
-    padding: 270px 0 150px 0;
+    padding: 0 0 150px 0;
     display: flex;
     flex-direction: column;
 }
@@ -208,7 +213,6 @@
     background-size: cover;
     width: 765px;
     height: 770px;
-    top: 0;
 }
 
 .city__history--bottom-img {
@@ -219,7 +223,8 @@
     right: 0;
 }
 
-.history-additional__small-img {
+
+.history__additional--small-img {
     background-size: cover;
     width: 450px;
     height: 450px;
@@ -230,7 +235,7 @@
     font-size: 18px;
     max-width: 600px;
     line-height: 25px;
-    padding-top: 75px;
+    padding-top: 150px;
     mix-blend-mode: hard-light;
     z-index: 1;
     text-indent: 30px;
@@ -238,7 +243,7 @@
 
 .city__history--bottom-description {
     max-width: 600px;
-    height: 510px;
+    min-height: 510px;
     font-size: 18px;
     mix-blend-mode: hard-light;
     z-index: 1;
@@ -262,7 +267,7 @@
     flex-direction: column;
 }
 
-.city-advantage-big {
+.city__advantage-big {
     padding-top: 400px;
     padding-bottom: 300px;
 }
@@ -271,8 +276,8 @@
     align-self: center;
 }
 
-.city-advantage-big .city__advantage--text {
-    max-width: 930px;
+.city__advantage--text {
+    max-width: 950px;
 }
 
 .city__facts--slider-wrapper {
@@ -282,7 +287,7 @@
 
 .city__facts--slider {
     position: sticky;
-    top: 0vh;
+    top: 0;
     height: 100vh;
     overflow: hidden;
     padding: 0 84px 0 260px;

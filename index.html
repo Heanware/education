@@ -12,6 +12,17 @@
     <script src="assets/js/script.js"></script>
     <title>Муниципальное образование</title>
 </head>
+<!--                                <svg viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg" width="754px" height="234px">
+                                                                <style>
+                                                                    .small {
+                                                                        font: italic 13px sans-serif;
+                                                                        mix-blend-mode: lighten;
+                                                                        fill: #232323;
+                                                                        font-size: 20px;
+                                                                    }
+                                                                </style>
+                                                                <text x="0" y="35" class="small">Тюмень первый русский город в Сибири</text>
+                                                            </svg>-->
 <body>
     <div class="anchor-cover js-anchor-cover"></div>
     <div class="cities-menu">
@@ -20,7 +31,7 @@
             <div class="cities-menu__item--description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Commodi harum illum, ipsum maiores molestias perferendis placeat quo voluptates.Aperiam consequatur
                 fugiat id magni obcaecati odit optio quis reprehenderit veniam vero!</div>
-            <button class="cities-menu__item--button">Подробнее</button>
+            <a class="cities-menu__item--button js-anchor" data-href="#tmn" data-color="#C5DCFF" href="#tmn">Подробнее</a>
         </div>
         <div class="cities-menu__item" style="background-image: url('assets/img/tblsk.jpg')">
             <div class="cities-menu__item--name">Тобольск</div>
@@ -32,23 +43,23 @@
             <div class="cities-menu__item--name">Ишим</div>
             <div class="cities-menu__item--description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Commodi harum illum, ipsum maiores molestias perferendis</div>
-            <button class="cities-menu__item--button">Подробнее</button>
+            <a class="cities-menu__item--button js-anchor" data-href="#ishim" data-color="#EAD6F0" href="#ishim">Подробнее</a>
         </div>
         <div class="cities-menu__item" style="background-image: url('assets/img/zvdk.jpg')">
             <div class="cities-menu__item--name">Заводоуковск</div>
             <div class="cities-menu__item--description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Commodi harum illum, ipsum maiores molestias perferendis</div>
-            <button class="cities-menu__item--button">Подробнее</button>
+            <a class="cities-menu__item--button js-anchor" data-href="#zvdk" data-color="#D8E5C5" href="#zvdk">Подробнее</a>
         </div>
         <div class="cities-menu__item" style="background-image: url('assets/img/ltr.jpg')">
             <div class="cities-menu__item--name">Ялуторовск</div>
             <div class="cities-menu__item--description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Commodi harum illum, ipsum maiores molestias perferendis</div>
-            <button class="cities-menu__item--button">Подробнее</button>
+            <a class="cities-menu__item--button js-anchor" data-href="#ltr" data-color="#CDE5FF" href="#ltr">Подробнее</a>
         </div>
     </div>
     <div class="cities">
-        <div class="city">
+        <div class="city" id="tmn">
             <div class="city__header-wrapper container">
                 <div class="city__header" style="background-image: url('assets/img/tmn-map.svg')">
                     <div class="city__header--info">
@@ -80,20 +91,9 @@
                     <div class="city__history">
                         <div class="city__history--title">История</div>
                         <div class="city__history--top ">
-                            <div class="city__history--top-img rellax-img" data-rellax-percentage="0.5" style="background-image:
+                            <div class="city__history--top-img rellax-img" data-rellax-percentage="0.9" style="background-image:
                     url('assets/img/tmn-top.jpg')"></div>
                             <div class="city__history--top-title">Тюмень первый русский город в Сибири
-                                <!--                                <svg viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg" width="754px" height="234px">
-                                                                    <style>
-                                                                        .small {
-                                                                            font: italic 13px sans-serif;
-                                                                            mix-blend-mode: lighten;
-                                                                            fill: #232323;
-                                                                            font-size: 20px;
-                                                                        }
-                                                                    </style>
-                                                                    <text x="0" y="35" class="small">Тюмень первый русский город в Сибири</text>
-                                                                </svg>-->
                             </div>
                             <div class="city__history--top-description">Строительство тюменского острога началось 29
                                 июля 1586 года недалеко от Чинги-Туры по указу последнего царя из династии Рюриковичей
@@ -119,7 +119,7 @@
                     </div>
                 </div>
             </div>
-            <div class="city__advantage city-advantage-big container">
+            <div class="city__advantage city__advantage-big container">
                 <div class="city__advantage--text">Чтобы узнать, почему Тюмень – лучший город Земли, нужно просто здесь
                     побывать.</div>
             </div>
@@ -184,7 +184,7 @@
             <div class="city__header-wrapper container">
                 <div class="city__header" style="background-image: url('assets/img/tblsk-map.svg')">
                     <div class="city__header--info">
-                        <dov class="city__header--info-title">Тобольск</dov>
+                        <div class="city__header--info-title">Тобольск</div>
                         <div class="city__header--info-description">По своим философским взглядам Дезами был
                             материалистом и атеистом, последователем Гельвеция, однако знак философски трансформирует из
                             ряда вон выходящий предмет деятельности.</div>
@@ -210,7 +210,8 @@
                     <div class="city__history bg-silver">
                         <div class="city__history--title">История</div>
                         <div class="city__history--top ">
-                            <div class="city__history--top-img rellax-img" data-rellax-percentage="0.5" style="background-image: url('assets/img/tblsk-top.jpg')"></div>
+                            <div class="city__history--top-img rellax-img" data-rellax-percentage="0.9" style="background-image: url('assets/img/tblsk-top.jpg')"></div>
+
                             <div class="city__history--top-title">Тобольск всего на год младше областной столицы</div>
                             <div class="city__history--top-description">Город был основан в 1587 году недалеко от места,
                                 где произошло сражение дружины Ермака с войском Кучума, ознаменовавшееся присоединением
@@ -235,14 +236,14 @@
             <div class="city__advantage bg-silver">
                 <div class="city__advantage--text">Тобольск подарил нам великих личностей</div>
             </div>
-            <div class="city__history bg-silver history-additional">
+            <div class="city__history bg-silver history__additional container">
                 <div class="city__history--top ">
                     <div class="city__history--top-img rellax-img" data-rellax-percentage="0.5" style="background-image: url('assets/img/tblsk-alex.jpg')"></div>
-                    <div class="city__history--top-description">Тобольск подарил нам известного композитора Александра
-                        Алябьева и великого химика Дмитрия Менделеева. Примечательно, что к чести последнего в наши дни
-                        именно нефтехимическая промышленность получила большой импульс к развитию. Сегодня здесь
-                        возводится крупнейший мировой комплекс в этой области.</div>
-                    <div class="city__history--bottom-img rellax-img history-additional__small-img" data-rellax-percentage="1.5" style="background-image: url('assets/img/tblsk-mend.jpg')"></div>
+                    <div class="city__history--top-description history__additional--description">Тобольск подарил нам
+                        известного композитора Александра Алябьева и великого химика Дмитрия Менделеева. Примечательно,
+                        что к чести последнего в наши дни именно нефтехимическая промышленность получила большой импульс
+                        к развитию. Сегодня здесь возводится крупнейший мировой комплекс в этой области.</div>
+                    <div class="city__history--bottom-img rellax-img history__additional--small-img" data-rellax-percentage="2.0" style="background-image: url('assets/img/tblsk-mend.jpg')"></div>
                 </div>
             </div>
             <div class="city__advantage-empty"></div>
@@ -303,11 +304,11 @@
                 </div>
             </div>
         </div>
-        <div class="city">
+        <div class="city" id="ltr">
             <div class="city__header-wrapper container">
                 <div class="city__header" style="background-image: url('assets/img/ltr-map.svg')">
                     <div class="city__header--info">
-                        <dov class="city__header--info-title">Ялуторовск</dov>
+                        <div class="city__header--info-title">Ялуторовск</div>
                         <div class="city__header--info-description">По своим философским взглядам Дезами был
                             материалистом и атеистом, последователем Гельвеция, однако знак философски трансформирует из
                             ряда вон выходящий предмет деятельности.</div>
@@ -334,7 +335,7 @@
                     <div class="city__history bg-silver">
                         <div class="city__history--title">История</div>
                         <div class="city__history--top ">
-                            <div class="city__history--top-img rellax-img" data-rellax-percentage="0.5" style="background-image: url('assets/img/ltr-top.jpg')"></div>
+                            <div class="city__history--top-img rellax-img" data-rellax-percentage="0.9" style="background-image: url('assets/img/ltr-top.jpg')"></div>
                             <div class="city__history--top-title">Ялуторовский острог</div>
                             <div class="city__history--top-description">Как известно, этот сибирский город начался с
                                 Ялуторовского острога – аванпоста, возведенного на месте древнего татарского городища
@@ -416,11 +417,11 @@
                 </div>
             </div>
         </div>
-        <div class="city">
+        <div class="city" id="zvdk">
             <div class="city__header-wrapper container">
                 <div class="city__header" style="background-image: url('assets/img/zvdk-map.svg')">
                     <div class="city__header--info">
-                        <dov class="city__header--info-title">Заводоуковск</dov>
+                        <div class="city__header--info-title">Заводоуковск</div>
                         <div class="city__header--info-description"> По своим философским взглядам Дезами был
                             материалистом и атеистом, последователем Гельвеция, однако знак философски трансформирует из
                             ряда вон выходящий предмет деятельности.</div>
@@ -448,7 +449,7 @@
                     <div class="city__history bg-silver">
                         <div class="city__history--title">История</div>
                         <div class="city__history--top ">
-                            <div class="city__history--top-img rellax-img" data-rellax-percentage="0.8" style="background-image: url('assets/img/zvdk-top.jpg')"></div>
+                            <div class="city__history--top-img rellax-img" data-rellax-percentage="0.9" style="background-image: url('assets/img/zvdk-top.jpg')"></div>
                             <div class="city__history--top-title">Статус города Заводоуковск получил лишь в 1960
                                 году</div>
                             <div class="city__history--top-description">До этого был известен как деревня Уковская,
@@ -527,11 +528,11 @@
                 </div>
             </div>
         </div>
-        <div class="city">
+        <div class="city" id="ishim">
             <div class="city__header-wrapper container">
                 <div class="city__header" style="background-image: url('assets/img/ishim-map.svg')">
                     <div class="city__header--info">
-                        <dov class="city__header--info-title">Ишим</dov>
+                        <div class="city__header--info-title">Ишим</div>
                         <div class="city__header--info-description"> По своим философским взглядам Дезами был
                             материалистом и атеистом, последователем Гельвеция, однако знак философски трансформирует из
                             ряда вон выходящий предмет деятельности.</div>
@@ -558,7 +559,7 @@
                     <div class="city__history bg-silver">
                         <div class="city__history--title">История</div>
                         <div class="city__history--top ">
-                            <div class="city__history--top-img rellax-img" data-rellax-percentage="0.5" style="background-image: url('assets/img/ishim-top.jpg')"></div>
+                            <div class="city__history--top-img rellax-img" data-rellax-percentage="0.9" style="background-image: url('assets/img/ishim-top.jpg')"></div>
                             <div class="city__history--top-title">Ишим возведен в период 1670 – 1687 годов</div>
                             <div class="city__history--top-description">Для защиты южных рубежей России от набегов
                                 кочевников и был известен под названием Коркинская слобода. Современное имя городу дала
@@ -584,12 +585,12 @@
             <div class="city__advantage bg-silver">
                 <div class="city__advantage--text">С историей города связаны жизни многих знаменитых людей</div>
             </div>
-            <div class="city__history bg-silver history-additional">
+            <div class="city__history bg-silver history__additional container">
                 <div class="city__history--top ">
                     <div class="city__history--top-img rellax-img" data-rellax-percentage="0.5" style="background-image: url('assets/img/ishim-ost.jpg')"></div>
-                    <div class="city__history--top-description">Писатели Петра Ершова и Валерия Медведева («Баранкин,
-                        будь человеком» и др.), декабристов Александра Одоевского и Владимира Штейнгейля, главного
-                        конструктора Останкинской телебашни Николая Никитина.</div>
+                    <div class="city__history--top-description history__additional--description">Писатели Петра Ершова и
+                        Валерия Медведева («Баранкин, будь человеком» и др.), декабристов Александра Одоевского и
+                        Владимира Штейнгейля, главного конструктора Останкинской телебашни Николая Никитина.</div>
                 </div>
             </div>
             <div class="city__facts container">

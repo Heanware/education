@@ -23,7 +23,7 @@ class Slider {
         this.slideChangeOffset = slideChangeOffset;
         let thisSlider = this,
             sliderOffset = $wrapper.find(".slider").offset().top;
-        $(window).on("scroll", function (e) {
+        $(window).on("scroll", function () {
                 let scrollTop = $(this).scrollTop();
                 thisSlider.wrapperOffset = thisSlider.$wrapper.offset().top;
                 if (!thisSlider.isSlideSetActive) {
@@ -34,7 +34,8 @@ class Slider {
                     thisSlider.setSlideActive(currentSlideIndex);
                     thisSlider.scrollPrev = thisSlider.wrapperOffset + thisSlider.verticalHeight * thisSlider.$active.index();
                 }
-                if (isAnchorUsed) {
+                if (isAnchorUsed && scrollTop > thisSlider.wrapperOffset) {
+
                     thisSlider.setLastSlideActive();
                 }
                 if (scrollTop > thisSlider.wrapperOffset &&
@@ -85,7 +86,7 @@ class Slider {
 $(function () {
 
     let effect = new Rellax(".rellax-img", {speed: 3}),
-        cover = $(".js-anchor-cover"),
+        $cover = $(".js-anchor-cover"),
         $videos = $(".js-wider"),
         $sliders = $(".js-slider"),
         $anchors = $(".js-anchor"),
@@ -102,7 +103,7 @@ $(function () {
             if (scroll > offset - videoBeforeAnimation) {
                 $video.css("max-width", width + "px");
             } else {
-                $video.css("max-width", "1800px");
+                $video.css("max-width", "calc(100vw - 60px)");
             }
         });
     });
@@ -111,24 +112,20 @@ $(function () {
         new Slider($(this), verticalHeight, slideChangeSpeed, slideChangeOffset);
     });
 
-    $anchors.each(function () {
-        $(this).on("click", function () {
-            isScrolling = true;
-            cover.css("z-index", "3");
-            cover.css("background-color", $(this).data("color"));
-            $("html").stop().animate({
-                scrollTop: $($(this).data("href")).offset().top
-            }, 1000, "linear", function () {
-                isAnchorUsed = true;
-                $(window).trigger("scroll");
-                cover.css("background-color", "unset");
-                setTimeout(function () {
-                    cover.css("z-index", "-3");
-                }, 700);
-                isScrolling = false;
-                isAnchorUsed = false;
-            });
-            return false;
-        })
+
+    $anchors.on("click", function () {
+        $anchor = $(this);
+        isScrolling = true;
+        $cover.addClass("cover-active");
+        $cover.css("background-color", $anchor.data("color"));
+        $("html").stop().animate({
+            scrollTop: $($anchor.data("href")).offset().top
+        }, 1500, "linear", function () {
+            isAnchorUsed = true;
+            $(window).trigger("scroll");
+            $cover.removeClass("cover-active");
+            isScrolling = false;
+            isAnchorUsed = false;
+        });
     })
 });
