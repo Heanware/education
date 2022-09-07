@@ -116,6 +116,14 @@
     padding: 0 0 340px 0;
 }
 
+.city__header--image {
+    position: absolute;
+    width: 1255px;
+    height: 1104px;
+    right: 60px;
+    z-index: -1;
+}
+
 .city__header--info {
     padding: 110px 0 0 0;
     width: 665px;
