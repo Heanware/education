@@ -5,6 +5,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "ManropeLight";
+    src: url("../fonts/Manrope-Light.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -199,11 +206,12 @@
 }
 
 .city__history--top-title {
+    font-family: "ManropeLight";
     font-size: 60px;
     padding-top: 10%;
     align-self: center;
-    mix-blend-mode: hard-light;
-    color: #232323;
+    mix-blend-mode: difference;
+    color: white;
     text-transform: uppercase;
     max-width: 754px;
     transform: translateX(155px);
@@ -249,7 +257,6 @@
     max-width: 600px;
     min-height: 510px;
     font-size: 18px;
-    mix-blend-mode: hard-light;
     z-index: 1;
     text-indent: 30px;
 }
