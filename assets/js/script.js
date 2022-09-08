@@ -108,10 +108,17 @@ $(function () {
         });
     });
 
-    $sliders.each(function () {
-        new Slider($(this), verticalHeight, slideChangeSpeed, slideChangeOffset);
-    });
+    if (window.matchMedia("(max-width: 768px)").matches) {
+        $(".owl-carousel").owlCarousel({
+            center: true,
+            items: 1
+        });
+    } else {
+        $sliders.each(function () {
+            new Slider($(this), verticalHeight, slideChangeSpeed, slideChangeOffset);
+        });
 
+    }
 
     $anchors.on("click", function () {
         $anchor = $(this);

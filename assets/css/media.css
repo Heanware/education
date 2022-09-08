@@ -177,7 +177,7 @@
     .city__header--image {
         width: 960px;
         height: 845px;
-        right: 40px;
+        right: 0;
         background-position: 215px;
     }
 
@@ -320,7 +320,7 @@
 
     .city__header--about-left {
         font-size: 35px;
-        padding-right: 0;
+        padding-right: 15px;
     }
 
     .city__header--info {
@@ -360,9 +360,66 @@
     }
 
     .city__advantage-big {
-        padding: 120px 0;
+        padding: 80px 0;
     }
-    .city__advantage--text{
+
+    .city__advantage--text {
         max-width: 565px;
+    }
+
+    .city__facts {
+        display: none;
+    }
+
+    .city__facts--slider-items {
+        flex-direction: column;
+    }
+
+    .city__facts--slider-item:before {
+        display: none;
+    }
+
+    .owl-item.active > .city__facts--slider-item {
+        opacity: 1;
+    }
+
+    .owl-item.active > .city__facts--slider-item > .city__facts--slider-item-title,
+    .owl-item.active > .city__facts--slider-item > .city__facts--slider-item-description {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .no-js .owl-carousel, .owl-carousel.owl-loaded {
+        display: block;
+    }
+
+    .city__facts--slider-item {
+        position: static;
+        flex-direction: column;
+    }
+
+    .city__facts--slider-item-title {
+        top: 15%;
+    }
+
+    .city__facts--slider-item-image {
+        margin: 0;
+        width: 345px;
+        height: 400px;
+    }
+
+    .city__facts--slider-item-description {
+        max-width: 345px;
+        padding: 30px 0 0 0;
+    }
+}
+
+@media (max-width: 615px) {
+    .city__header--info {
+        align-self: flex-start;
+    }
+
+    .city__history--top-title {
+        max-width: 300px;
     }
 }
