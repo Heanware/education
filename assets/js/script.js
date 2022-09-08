@@ -111,7 +111,7 @@ $(function () {
     if (window.matchMedia("(max-width: 768px)").matches) {
         $(".owl-carousel").owlCarousel({
             center: true,
-            items: 1
+            items: 1,
         });
     } else {
         $sliders.each(function () {

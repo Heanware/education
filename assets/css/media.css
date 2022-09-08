@@ -1,6 +1,7 @@
 @media (max-width: 1600px) {
     .container {
-        padding: 0 40px;
+        padding-left: 40px;
+        padding-right: 40px;
     }
 
     .cities-menu {
@@ -356,11 +357,13 @@
     }
 
     .city__advantage {
-        padding: 0;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
     .city__advantage-big {
-        padding: 80px 0;
+        padding-top: 80px;
+        padding-bottom: 80px;
     }
 
     .city__advantage--text {
@@ -391,6 +394,11 @@
 
     .no-js .owl-carousel, .owl-carousel.owl-loaded {
         display: block;
+    }
+
+    .city__facts--slider-title {
+        left: unset;
+        z-index: 2;
     }
 
     .city__facts--slider-item {
