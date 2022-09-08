@@ -399,6 +399,7 @@
     .city__facts--slider-title {
         left: unset;
         z-index: 2;
+        font-size: 12px;
     }
 
     .city__facts--slider-item {
