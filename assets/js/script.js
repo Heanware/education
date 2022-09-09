@@ -107,17 +107,30 @@ $(function () {
             }
         });
     });
-
     if (window.matchMedia("(max-width: 768px)").matches) {
-        $(".owl-carousel").owlCarousel({
+
+        let mobileSlider = $(".owl-carousel").owlCarousel({
             center: true,
             items: 1,
+            onTranslated: mobileSliderCallback,
         });
+
+        function mobileSliderCallback(e) {
+            let $element = $(e.target),
+                items = e.item.count,
+                item = e.item.index;
+            if (item > items) {
+                item = item - items
+            }
+            let $titles = $element.closest(".city__mobile").find(".city__mobile--title-item");
+            $titles.removeClass("title-active");
+            $titles.eq(item).addClass("title-active");
+        }
+
     } else {
         $sliders.each(function () {
             new Slider($(this), verticalHeight, slideChangeSpeed, slideChangeOffset);
         });
-
     }
 
     $anchors.on("click", function () {
