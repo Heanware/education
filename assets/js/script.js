@@ -85,8 +85,7 @@ class Slider {
 
 $(function () {
 
-    let effect = new Rellax(".rellax-img", {speed: 3}),
-        $cover = $(".js-anchor-cover"),
+    let $cover = $(".js-anchor-cover"),
         $videos = $(".js-wider"),
         $sliders = $(".js-slider"),
         $anchors = $(".js-anchor"),
@@ -108,12 +107,12 @@ $(function () {
         });
     });
     if (window.matchMedia("(max-width: 768px)").matches) {
-
-        let mobileSlider = $(".owl-carousel").owlCarousel({
-            center: true,
-            items: 1,
-            onTranslated: mobileSliderCallback,
-        });
+        let effect = new Rellax(".rellax-img", {speed: 1.5}),
+            mobileSlider = $(".owl-carousel").owlCarousel({
+                center: true,
+                items: 1,
+                onTranslated: mobileSliderCallback,
+            });
 
         function mobileSliderCallback(e) {
             let $element = $(e.target),
@@ -128,6 +127,7 @@ $(function () {
         }
 
     } else {
+        let effect = new Rellax(".rellax-img", {speed: 3});
         $sliders.each(function () {
             new Slider($(this), verticalHeight, slideChangeSpeed, slideChangeOffset);
         });

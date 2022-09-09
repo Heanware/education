@@ -146,10 +146,6 @@
         font-size: 24px;
     }
 
-    .cities-menu__item--description {
-        font-size: 12px;
-    }
-
     .cities-menu__item--button {
         padding: 15px 45px;
     }
@@ -160,10 +156,6 @@
 
     .cities-menu__item:first-child > .cities-menu__item--name {
         font-size: 35px;
-    }
-
-    .cities-menu__item:first-child > .cities-menu__item--description {
-        font-size: 14px;
     }
 
     .city__header-wrapper {
@@ -190,10 +182,6 @@
         font-size: 75px;
     }
 
-    .city__header--info-description {
-        font-size: 14px;
-    }
-
     .city__header--about-left {
         font-size: 35px;
         padding-right: 30px;
@@ -204,7 +192,6 @@
     }
 
     .city__history--title {
-        font-size: 12px;
         margin-bottom: 0;
     }
 
@@ -226,7 +213,6 @@
 
     .city__history--top-description,
     .city__history--bottom-description {
-        font-size: 14px;
         max-width: 465px;
         line-height: 19px;
     }
@@ -287,9 +273,23 @@
     }
 
     .city__facts--slider-item-description {
-        font-size: 12px;
         min-width: 270px;
     }
+
+    .cities-menu__item--description,
+    .city__history--title,
+    .city__facts--slider-item-description {
+        font-size: 12px;
+    }
+
+    .cities-menu__item:first-child > .cities-menu__item--description,
+    .city__header--info-description,
+    .city__history--top-description,
+    .city__history--bottom-description {
+        font-size: 14px;
+    }
+
+
 }
 
 @media (max-width: 768px) {
@@ -386,22 +386,9 @@
         max-width: 565px;
     }
 
-    .city__facts {
-        display: none;
-    }
-
+    .city__facts,
     .city__facts--slider-item:before {
         display: none;
-    }
-
-    .owl-item.active > .city__facts--slider-item {
-        opacity: 1;
-    }
-
-    .owl-item.active > .city__facts--slider-item > .city__facts--slider-item-title,
-    .owl-item.active > .city__facts--slider-item > .city__facts--slider-item-description {
-        opacity: 1;
-        transform: translateX(0);
     }
 
     .city__mobile {
@@ -411,7 +398,6 @@
     .city__facts--slider-title {
         left: unset;
         z-index: 2;
-        font-size: 12px;
     }
 
     .city__facts--slider-item {
@@ -437,6 +423,7 @@
 }
 
 @media (max-width: 615px) {
+
     .city__header--info {
         align-self: flex-start;
     }
@@ -467,16 +454,8 @@
         margin: 15px 0 40px 0;
     }
 
-    .cities-menu__item--name {
-        font-size: 18px;
-    }
-
     .cities-menu__item--description {
         margin: 15px 0 40px 0;
-    }
-
-    .city__header {
-        padding: 0 0 80px 0;
     }
 
     .city__header--image {
@@ -506,7 +485,6 @@
 
     .city__header--about-right {
         font-size: 14px;
-        text-indent: unset;
     }
 
     .city__history--top-img,
@@ -521,6 +499,7 @@
         top: 55%;
     }
 
+    .city__header,
     .city__history--top {
         padding-bottom: 80px;
     }
@@ -529,7 +508,6 @@
     .city__history--bottom-description {
         line-height: 16px;
         max-width: 255px;
-        text-indent: unset;
     }
 
     .city__history--top-description {
@@ -548,9 +526,20 @@
         min-height: 150px;
     }
 
+    .cities-menu__item--name,
     .city__advantage--text {
         font-size: 18px;
+    }
+
+    .city__advantage--text {
         max-width: 400px;
+    }
+
+    .city__history--top-description,
+    .city__history--bottom-description,
+    .city__header--info-description,
+    .city__header--about-right {
+        text-indent: unset;
     }
 
     .city__mobile--title-item,
@@ -561,12 +550,12 @@
         font-size: 22px;
     }
 
-    .city__history--top-description,
-    .city__mobile--slider-item-description,
+    .cities-menu__item:first-child > .cities-menu__item--description,
+    .city__header--info-description,
     .city__history--top-description,
     .city__history--bottom-description,
-    .city__header--info-description,
-    .cities-menu__item:first-child > .cities-menu__item--description {
+    .city__facts--slider-title,
+    .city__mobile--slider-item-description {
         font-size: 12px;
     }
 }
