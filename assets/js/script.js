@@ -35,7 +35,6 @@ class Slider {
                     thisSlider.scrollPrev = thisSlider.wrapperOffset + thisSlider.verticalHeight * thisSlider.$active.index();
                 }
                 if (isAnchorUsed && scrollTop > thisSlider.wrapperOffset) {
-
                     thisSlider.setLastSlideActive();
                 }
                 if (scrollTop > thisSlider.wrapperOffset &&
@@ -86,14 +85,22 @@ class Slider {
 $(function () {
 
     let $cover = $(".js-anchor-cover"),
+        $cities = $(".city"),
         $videos = $(".js-wider"),
         $sliders = $(".js-slider"),
         $anchors = $(".js-anchor"),
         scrollBarWidth = window.innerWidth - $(window).width(),
-        verticalHeight = $(window).outerHeight();
+        verticalHeight = $(window).outerHeight(),
+        scrollPrev = 0;
 
-    $(window).on("scroll", function () {
-        let scroll = $(this).scrollTop();
+    $(window).on("scroll", function (e) {
+        let scroll = $(this).scrollTop(),
+            isScrollingDown,
+            pos = $(this).scrollTop();
+
+        isScrollingDown = scrollPrev < pos;
+        scrollPrev = pos;
+
         $videos.each(function () {
             let $videos = $(this),
                 offset = $videos.offset().top,
@@ -105,12 +112,21 @@ $(function () {
                 $video.css("max-width", "calc(100vw - 60px)");
             }
         });
+
+        $cities.each(function () {
+            let $city = $(this),
+                offset = $city.offset().top;
+            if (scroll + verticalHeight > offset && scroll + verticalHeight < offset + slideChangeOffset && isScrollingDown) {
+                $("a[href='#" + $city.attr("id") + "']").trigger("click");
+            }
+        });
     });
+
     if (window.matchMedia("(max-width: 768px)").matches) {
         let effect = new Rellax(".rellax-img", {speed: 1.5}),
             mobileSlider = $(".owl-carousel").owlCarousel({
                 center: true,
-                items: 1,
+                items: 1.8,
                 onTranslated: mobileSliderCallback,
             });
 
@@ -133,19 +149,27 @@ $(function () {
         });
     }
 
-    $anchors.on("click", function () {
+    $anchors.on("click", function (e) {
+        e = e.originalEvent;
+        if (e) {
+            e.preventDefault();
+        }
         $anchor = $(this);
         isScrolling = true;
-        $cover.addClass("cover-active");
         $cover.css("background-color", $anchor.data("color"));
-        $("html").stop().animate({
-            scrollTop: $($anchor.data("href")).offset().top
-        }, 1500, "linear", function () {
-            isAnchorUsed = true;
-            $(window).trigger("scroll");
-            $cover.removeClass("cover-active");
-            isScrolling = false;
-            isAnchorUsed = false;
-        });
+        $cover.addClass("cover-active");
+        setTimeout(function () {
+            $("html").stop().animate({
+                    scrollTop: $($anchor.data("href")).offset().top
+                }, 400, "linear", function () {
+                    isAnchorUsed = true;
+                    $(window).trigger("scroll");
+                    $cover.removeClass("cover-active");
+                    $cover.css("background-color", "");
+                    isScrolling = false;
+                    isAnchorUsed = false;
+                }
+            );
+        }, 400);
     })
 });

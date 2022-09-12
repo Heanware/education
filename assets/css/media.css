@@ -148,6 +148,7 @@
 
     .cities-menu__item--button {
         padding: 15px 45px;
+        font-size: 12px;
     }
 
     .cities-menu__item:first-child {
@@ -288,8 +289,6 @@
     .city__history--bottom-description {
         font-size: 14px;
     }
-
-
 }
 
 @media (max-width: 768px) {
@@ -359,7 +358,7 @@
     }
 
     .city__history--top-title {
-        padding-top: 30%;
+        padding-top: 18%;
     }
 
     .city__history--top-description,
@@ -450,11 +449,8 @@
         padding: 30px 0 0 15px;
     }
 
+    .cities-menu__item--description,
     .cities-menu__item:first-child > .cities-menu__item--description {
-        margin: 15px 0 40px 0;
-    }
-
-    .cities-menu__item--description {
         margin: 15px 0 40px 0;
     }
 
@@ -509,7 +505,9 @@
         line-height: 16px;
         max-width: 255px;
     }
-
+.city__history--bottom-description-title{
+    margin-bottom: 30px;
+}
     .city__history--top-description {
         padding-top: 30px;
     }
