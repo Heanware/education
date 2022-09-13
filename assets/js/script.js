@@ -91,7 +91,8 @@ $(function () {
         $anchors = $(".js-anchor"),
         scrollBarWidth = window.innerWidth - $(window).width(),
         verticalHeight = $(window).outerHeight(),
-        scrollPrev = 0;
+        scrollPrev = 0,
+        $inactiveSlide;
 
     $(window).on("scroll", function (e) {
         let scroll = $(this).scrollTop(),
@@ -116,7 +117,9 @@ $(function () {
         $cities.each(function () {
             let $city = $(this),
                 offset = $city.offset().top;
-            if (scroll + verticalHeight > offset && scroll + verticalHeight < offset + slideChangeOffset && isScrollingDown) {
+            if (scroll + verticalHeight > offset &&
+                scroll + verticalHeight < offset + slideChangeOffset &&
+                isScrollingDown) {
                 $("a[href='#" + $city.attr("id") + "']").trigger("click");
             }
         });
@@ -126,8 +129,21 @@ $(function () {
         let effect = new Rellax(".rellax-img", {speed: 1.5}),
             mobileSlider = $(".owl-carousel").owlCarousel({
                 center: true,
-                items: 1.8,
-                onTranslated: mobileSliderCallback,
+                margin: 30,
+                onDragged: mobileSliderCallback,
+                responsive: {
+                    320:{
+                        items: 1.3,
+                        center:false,
+                        margin:40
+                    },
+                    568: {
+                        items: 2
+                    },
+                    768: {
+                        items: 1.9
+                    }
+                }
             });
 
         function mobileSliderCallback(e) {
@@ -137,9 +153,15 @@ $(function () {
             if (item > items) {
                 item = item - items
             }
-            let $titles = $element.closest(".city__mobile").find(".city__mobile--title-item");
+            let $parent = $element.closest(".city__mobile"),
+                $titles = $parent.find(".city__mobile--title-item");
             $titles.removeClass("title-active");
             $titles.eq(item).addClass("title-active");
+            if (typeof($inactiveSlide) !== "undefined") {
+                $inactiveSlide.removeClass("slide-hide");
+            }
+            $inactiveSlide = $parent.find(".city__mobile--slider-items-item").eq(item - 1);
+            $inactiveSlide.addClass("slide-hide");
         }
 
     } else {
