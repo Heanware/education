@@ -132,10 +132,12 @@ $(function () {
                 margin: 30,
                 onDragged: mobileSliderCallback,
                 responsive: {
-                    320:{
-                        items: 1.3,
-                        center:false,
-                        margin:40
+                    320: {
+                        items: 1,
+                        center: false, // если false, слайдер начинает баговать
+                                       // даёт посмотреть только первые 2 слайда, не пускает до третьего
+                                    // и в принципе непредсказуемо себя ведёт. Если отключить mobileSliderCallback то проблема не уходит
+                        margin: 40
                     },
                     568: {
                         items: 2
@@ -157,7 +159,7 @@ $(function () {
                 $titles = $parent.find(".city__mobile--title-item");
             $titles.removeClass("title-active");
             $titles.eq(item).addClass("title-active");
-            if (typeof($inactiveSlide) !== "undefined") {
+            if (typeof ($inactiveSlide) !== "undefined") {
                 $inactiveSlide.removeClass("slide-hide");
             }
             $inactiveSlide = $parent.find(".city__mobile--slider-items-item").eq(item - 1);
