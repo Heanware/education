@@ -161,10 +161,7 @@
 
     .city__header-wrapper {
         padding-top: 130px;
-    }
-
-    .city__header {
-        padding: 0 0 150px 0;
+        padding-bottom: 150px;
     }
 
     .city__header--image {
@@ -316,6 +313,7 @@
 
     .city__header-wrapper {
         padding-top: 120px;
+        padding-bottom: 90px;
     }
 
     .city__header--image {
@@ -495,7 +493,6 @@
         top: 55%;
     }
 
-    .city__header,
     .city__history--top {
         padding-bottom: 80px;
     }

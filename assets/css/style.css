@@ -100,7 +100,7 @@
 
 .cities-menu__item:first-child > .cities-menu__item--name {
     font-size: 50px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .cities-menu__item:first-child > .cities-menu__item--description {
@@ -110,6 +110,7 @@
 
 .city__header-wrapper {
     padding-top: 200px;
+    padding-bottom: 340px;
 }
 
 .city__header {
@@ -117,7 +118,6 @@
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    padding: 0 0 340px 0;
 }
 
 .city__header--image {
