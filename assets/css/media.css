@@ -356,7 +356,7 @@
     }
 
     .city__history--top-title {
-        padding-top: 18%;
+        padding-top: 23%;
     }
 
     .city__history--top-description,
@@ -438,7 +438,7 @@
     }
 
     .cities-menu__item {
-        padding: 30px 0 0 15px;
+        padding: 30px 0 0 3%;
     }
 
     .cities-menu__item:first-child {
@@ -449,7 +449,7 @@
 
     .cities-menu__item--description,
     .cities-menu__item:first-child > .cities-menu__item--description {
-        margin: 15px 0 40px 0;
+        margin: 15px 0 25px 0;
     }
 
     .city__header--image {
@@ -498,7 +498,8 @@
     }
 
     .city__history--top-title {
-        max-width: 261px;
+        max-width: 50%;
+        transform: translateX(32%);
     }
 
     .city__history--top-description,
