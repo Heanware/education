@@ -55,7 +55,7 @@
     }
 
     .city__history--top-title {
-        padding-top: 10%;
+        transform: translateX(125px);
     }
 
     .city__history--top-description {
@@ -114,7 +114,7 @@
     .city__facts--slider-item-image {
         min-width: 474px;
         max-height: 470px;
-        margin-left: 26%;
+        margin-left: 33%;
     }
 
     .city__facts--slider-item-description {
