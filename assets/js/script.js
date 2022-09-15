@@ -83,10 +83,9 @@ class Slider {
 }
 
 $(function () {
-
     let $cover = $(".js-anchor-cover"),
         $cities = $(".city"),
-        $videos = $(".js-wider"),
+        $videoWrappers = $(".js-wider"),
         $sliders = $(".js-slider"),
         $anchors = $(".js-anchor"),
         scrollBarWidth = window.innerWidth - $(window).width(),
@@ -94,19 +93,18 @@ $(function () {
         scrollPrev = 0,
         $inactiveSlide;
 
-    $(window).on("scroll", function (e) {
+    $(window).on("scroll", function () {
         let scroll = $(this).scrollTop(),
-            isScrollingDown,
-            pos = $(this).scrollTop();
+            isScrollingDown;
 
-        isScrollingDown = scrollPrev < pos;
-        scrollPrev = pos;
+        isScrollingDown = scrollPrev < scroll;
+        scrollPrev = scroll;
 
-        $videos.each(function () {
-            let $videos = $(this),
-                offset = $videos.offset().top,
+        $videoWrappers.each(function () {
+            let $videoWrapper = $(this),
+                offset = $videoWrapper.offset().top,
                 width = windowWidth - scrollBarWidth,
-                $video = $videos.find("video");
+                $video = $videoWrapper.find("video");
             if (scroll > offset - videoBeforeAnimation) {
                 $video.css("max-width", width + "px");
             } else {
@@ -130,7 +128,23 @@ $(function () {
             mobileSlider = $(".owl-carousel").owlCarousel({
                 center: true,
                 margin: 30,
-                onDragged: mobileSliderCallback,
+                onDragged: function (e) {
+                    let $currentSlide = $(e.target),
+                        count = e.item.count,
+                        index = e.item.index;
+                    if (index > count) {
+                        index = index - count;
+                    }
+                    let $closestCityMobile = $currentSlide.closest(".city__mobile"),
+                        $titles = $closestCityMobile.find(".city__mobile--title-item");
+                    $titles.removeClass("title-active");
+                    $titles.eq(index).addClass("title-active");
+                    if (typeof ($inactiveSlide) !== "undefined") {
+                        $inactiveSlide.removeClass("slide-hide");
+                    }
+                    $inactiveSlide = $closestCityMobile.find(".city__mobile--slider-items-item").eq(index - 1);
+                    $inactiveSlide.addClass("slide-hide");
+                },
                 responsive: {
                     0: {
                         items: 1,
@@ -147,25 +161,6 @@ $(function () {
                     }
                 }
             });
-
-        function mobileSliderCallback(e) {
-            let $element = $(e.target),
-                items = e.item.count,
-                item = e.item.index;
-            if (item > items) {
-                item = item - items
-            }
-            let $parent = $element.closest(".city__mobile"),
-                $titles = $parent.find(".city__mobile--title-item");
-            $titles.removeClass("title-active");
-            $titles.eq(item).addClass("title-active");
-            if (typeof ($inactiveSlide) !== "undefined") {
-                $inactiveSlide.removeClass("slide-hide");
-            }
-            $inactiveSlide = $parent.find(".city__mobile--slider-items-item").eq(item - 1);
-            $inactiveSlide.addClass("slide-hide");
-        }
-
     } else {
         let effect = new Rellax(".rellax-img", {speed: 3});
         $sliders.each(function () {
@@ -195,5 +190,5 @@ $(function () {
                 }
             );
         }, 400);
-    })
+    });
 });
