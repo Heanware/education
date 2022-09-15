@@ -1,10 +1,12 @@
-let isScrolling = false,
-    isAnchorUsed = false,
-    windowWidth = $(window).outerWidth();
-
 const videoBeforeAnimation = 300,
     slideChangeSpeed = 1000,
-    slideChangeOffset = 210;
+    slideChangeOffset = 210,
+    $window = $(window),
+    $html = $("html");
+
+let isScrolling = false,
+    isAnchorUsed = false,
+    windowWidth = $window.outerWidth();
 
 class Slider {
     $wrapper;
@@ -23,7 +25,7 @@ class Slider {
         this.slideChangeOffset = slideChangeOffset;
         let thisSlider = this,
             sliderOffset = $wrapper.find(".slider").offset().top;
-        $(window).on("scroll", function () {
+        $window.on("scroll", function () {
                 let scrollTop = $(this).scrollTop();
                 thisSlider.wrapperOffset = thisSlider.$wrapper.offset().top;
                 if (!thisSlider.isSlideSetActive) {
@@ -48,7 +50,7 @@ class Slider {
                 }
             }
         );
-        $(window).trigger("scroll");
+        $window.trigger("scroll");
     }
 
     setSlideActive(currentSlideIndex) {
@@ -70,7 +72,7 @@ class Slider {
             let range = this.wrapperOffset + this.verticalHeight * $slide.index(),
                 thisSlider = this;
             this.$active.removeClass("slide-active");
-            $("html").animate({
+            $html.animate({
                 scrollTop: range
             }, thisSlider.slideChangeSpeed, "linear", function () {
                 isScrolling = false;
@@ -88,12 +90,11 @@ $(function () {
         $videoWrappers = $(".js-wider"),
         $sliders = $(".js-slider"),
         $anchors = $(".js-anchor"),
-        scrollBarWidth = window.innerWidth - $(window).width(),
-        verticalHeight = $(window).outerHeight(),
-        scrollPrev = 0,
-        $inactiveSlide;
+        scrollBarWidth = window.innerWidth - $window.width(),
+        verticalHeight = $window.outerHeight(),
+        scrollPrev = 0;
 
-    $(window).on("scroll", function () {
+    $window.on("scroll", function () {
         let scroll = $(this).scrollTop(),
             isScrollingDown;
 
@@ -125,7 +126,7 @@ $(function () {
 
     if (window.matchMedia("(max-width: 768px)").matches) {
         let effect = new Rellax(".rellax-img", {speed: 1.5}),
-            mobileSlider = $(".owl-carousel").owlCarousel({
+            mobileSlider = $(".city__mobile--items.owl-carousel").owlCarousel({
                 center: true,
                 margin: 30,
                 onDragged: function (e) {
@@ -136,14 +137,12 @@ $(function () {
                         index = index - count;
                     }
                     let $closestCityMobile = $currentSlide.closest(".city__mobile"),
-                        $titles = $closestCityMobile.find(".city__mobile--title-item");
+                        $titles = $closestCityMobile.find(".city__mobile--title-item"),
+                        $sliderItems = $closestCityMobile.find(".city__mobile--slider-items-item");
                     $titles.removeClass("title-active");
                     $titles.eq(index).addClass("title-active");
-                    if (typeof ($inactiveSlide) !== "undefined") {
-                        $inactiveSlide.removeClass("slide-hide");
-                    }
-                    $inactiveSlide = $closestCityMobile.find(".city__mobile--slider-items-item").eq(index - 1);
-                    $inactiveSlide.addClass("slide-hide");
+                    $sliderItems.removeClass("slide-hide");
+                    $sliderItems.eq(index - 1).addClass("slide-hide");
                 },
                 responsive: {
                     0: {
@@ -178,11 +177,11 @@ $(function () {
         $cover.css("background-color", $anchor.data("color"));
         $cover.addClass("cover-active");
         setTimeout(function () {
-            $("html").stop().animate({
+            $html.stop().animate({
                     scrollTop: $($anchor.data("href")).offset().top
                 }, 400, "linear", function () {
                     isAnchorUsed = true;
-                    $(window).trigger("scroll");
+                    $window.trigger("scroll");
                     $cover.removeClass("cover-active");
                     $cover.css("background-color", "");
                     isScrolling = false;
