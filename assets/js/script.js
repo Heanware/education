@@ -166,7 +166,8 @@ $(function () {
             new Slider($(this), verticalHeight, slideChangeSpeed, slideChangeOffset);
         });
     }
-
+ // media if query 1024 speed 2
+    
     $anchors.on("click", function (e) {
         e = e.originalEvent;
         if (e) {
