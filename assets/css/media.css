@@ -672,10 +672,17 @@
 }
 
 @media (max-width: 320px) {
-    .cities-menu__item--description,
+    .cities-menu__item {
+        padding: 30px 0 0 15px;
+    }
+
     .cities-menu__item:first-child > .cities-menu__item--description {
-        margin: 15px 0 25px 0;
+        margin: 15px 0 40px 0;
         max-width: 290px;
+    }
+
+    .cities-menu__item--description {
+        margin: 15px 0 35px 0;
     }
 
     .cities-menu__item--button {
@@ -684,10 +691,11 @@
 
     .city__header-wrapper {
         padding-top: 80px;
+        padding-bottom: 80px;
     }
 
     .city__header--info {
-        padding: 30px 0 0 0;
+        padding: 0 0 0 0;
         min-height: 320px;
         align-self: unset;
     }
@@ -707,9 +715,18 @@
         padding-bottom: 0;
     }
 
+    .city__history--title {
+        position: static;
+        padding: 0;
+    }
+
     .city__history--top-img,
     .city__history--bottom-img {
         position: static;
+    }
+
+    .city__history--bottom-img {
+        margin-top: 60px;
     }
 
     .city__history--top-img {
@@ -741,10 +758,15 @@
         height: 241px;
     }
 
+    .history__additional > .city__history--top {
+        padding-bottom: unset;
+    }
+
     .history__additional--small-img {
         width: 200px;
         height: 200px;
         margin-left: auto;
+        margin-top: 20px;
     }
 
     .city__advantage {
@@ -756,6 +778,10 @@
     }
 
     .city__advantage--text {
+        max-width: 290px;
+    }
+
+    .city__advantage-big > .city__advantage--text {
         max-width: 290px;
     }
 
