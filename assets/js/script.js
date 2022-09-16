@@ -1,6 +1,7 @@
 const videoBeforeAnimation = 300,
     slideChangeSpeed = 1000,
     slideChangeOffset = 210,
+    cityChangeOffset = 270,
     $window = $(window),
     $html = $("html");
 
@@ -116,8 +117,8 @@ $(function () {
         $cities.each(function () {
             let $city = $(this),
                 offset = $city.offset().top;
-            if (scroll + verticalHeight > offset &&
-                scroll + verticalHeight < offset + slideChangeOffset &&
+            if (scroll + verticalHeight > offset + 100 &&
+                scroll + verticalHeight < offset + cityChangeOffset &&
                 isScrollingDown) {
                 $("a[data-href='#" + $city.attr("id") + "']").trigger("click");
             }
@@ -167,7 +168,7 @@ $(function () {
         });
     }
  // media if query 1024 speed 2
-    
+
     $anchors.on("click", function (e) {
         e = e.originalEvent;
         if (e) {
