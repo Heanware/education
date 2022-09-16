@@ -119,7 +119,7 @@ $(function () {
             if (scroll + verticalHeight > offset &&
                 scroll + verticalHeight < offset + slideChangeOffset &&
                 isScrollingDown) {
-                $("a[href='#" + $city.attr("id") + "']").trigger("click");
+                $("a[data-href='#" + $city.attr("id") + "']").trigger("click");
             }
         });
     });
