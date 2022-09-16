@@ -516,7 +516,7 @@
 
     .cities-menu__item--description,
     .cities-menu__item:first-child > .cities-menu__item--description {
-        margin: 15px 0 25px 0;
+        margin: 15px 0 45px 0;
     }
 
     .city__header--image {
@@ -535,6 +535,10 @@
         font-size: 42px;
     }
 
+    .city__header--info-description {
+        margin-top: 15px;
+    }
+
     .city__header--about {
         flex-direction: column;
         max-width: 400px;
@@ -548,6 +552,16 @@
         font-size: 14px;
     }
 
+    .city__history {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .city__history--title {
+        position: absolute;
+        padding-top: 20px;
+    }
+
     .city__history--top-img,
     .city__history--bottom-img {
         width: 255px;
@@ -557,7 +571,7 @@
     .history__additional--small-img {
         width: 155px;
         height: 155px;
-        top: 55%;
+        top: 81%;
     }
 
     .city__history--top {
@@ -575,6 +589,10 @@
         max-width: 255px;
     }
 
+    .city__history--bottom-description {
+        min-height: 120px;
+    }
+
     .city__history--bottom-description-title {
         margin-bottom: 30px;
     }
@@ -589,10 +607,15 @@
 
     .history__additional {
         padding-bottom: 50px;
+        padding-top: 50px;
     }
 
     .history__additional--description {
         min-height: 150px;
+    }
+
+    .city__advantage {
+        padding-bottom: 0;
     }
 
     .cities-menu__item--name,
@@ -600,9 +623,14 @@
         font-size: 18px;
     }
 
-    .city__advantage--text {
-        max-width: 400px;
+    .city__advantage-big > .city__advantage--text {
+        max-width: 330px;
     }
+
+    .city__advantage--text {
+        max-width: 362px;
+    }
+
 
     .city__history--top-description,
     .city__history--bottom-description,

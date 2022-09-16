@@ -114,7 +114,7 @@ $(function () {
             }
         });
 
-        $cities.each(function () {
+/*        $cities.each(function () {
             let $city = $(this),
                 offset = $city.offset().top;
             if (scroll + verticalHeight > offset + 100 &&
@@ -122,7 +122,7 @@ $(function () {
                 isScrollingDown) {
                 $("a[data-href='#" + $city.attr("id") + "']").trigger("click");
             }
-        });
+        });*/
     });
 
     if (window.matchMedia("(max-width: 768px)").matches) {
