@@ -133,7 +133,7 @@
 .city__header--info {
     padding: 110px 0 0 0;
     width: 665px;
-    min-height: 1110px;
+    min-height: 1160px;
     overflow: visible;
     align-self: center;
 }
@@ -160,7 +160,7 @@
 
 .city__header--about-left {
     font-size: 50px;
-    padding-right: 70px;
+    padding-right: 130px;
 }
 
 .city__header--about-right {
@@ -197,7 +197,8 @@
 }
 
 .history__additional {
-    padding-bottom: 240px;
+    padding-bottom: 100px;
+    padding-top:0;
 }
 
 .city__history--top, .city__history--bottom {
@@ -205,7 +206,7 @@
 }
 
 .city__history--top {
-    padding: 0 0 150px 0;
+    padding: 0 0 180px 0;
     display: flex;
     flex-direction: column;
 }
@@ -217,12 +218,13 @@
 .city__history--title {
     margin-bottom: 60px;
     font-size: 16px;
+    color: #8b8b8b;
 }
 
 .city__history--top-title {
     font-family: "ManropeLight";
     font-size: 60px;
-    padding-top: 15%;
+    padding-top: 20%;
     align-self: center;
     mix-blend-mode: difference;
     color: white;
@@ -254,9 +256,9 @@
     background-size: cover;
     width: 450px;
     height: 450px;
-    top: 80%;
+    top: 70%;
 }
-
+/* TEXT INDENT EBANIY */
 .city__history--top-description,
 .city__history--bottom-description {
     line-height: 25px;
@@ -266,7 +268,7 @@
     margin-left: 50%;
     font-size: 18px;
     max-width: 600px;
-    padding-top: 75px;
+    padding-top: 105px;
     mix-blend-mode: hard-light;
     z-index: 1;
     text-indent: 30px;
@@ -292,7 +294,7 @@
     height: unset;
     font-size: 47px;
     padding-top: 200px;
-    padding-bottom: 200px;
+    padding-bottom: 140px;
     display: flex;
     flex-direction: column;
 }
@@ -381,7 +383,7 @@
 .city__facts--slider-item-title {
     position: absolute;
     left: 0;
-    top: 35%;
+    top: 30%;
     max-width: 620px;
     font-size: 60px;
     text-transform: uppercase;
