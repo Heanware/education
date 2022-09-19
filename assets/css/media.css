@@ -326,7 +326,7 @@
     .city__facts--slider-item-image {
         min-width: 330px;
         max-height: 383px;
-        margin-left: 23%;
+        margin-left: 25%;
     }
 
     .city__facts--slider-item-description {
@@ -754,7 +754,7 @@
     }
 
     .city__history--bottom-img {
-        margin-top: 60px;
+        margin-top: 20px;
     }
 
     .city__history--top-img {
@@ -799,6 +799,11 @@
 
     .city__advantage {
         padding-bottom: 0;
+        padding-top: 50px;
+    }
+
+    .city__advantage-empty {
+        padding: 40px 0;
     }
 
     .city__advantage-big {
@@ -830,5 +835,8 @@
 
     .city__mobile--slider-item-image {
         min-height: 210px;
+    }
+    .owl-item.active{
+        max-width: 230px;
     }
 }

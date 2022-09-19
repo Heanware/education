@@ -127,15 +127,17 @@
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .city__header--image {
     position: absolute;
-    width: 1255px;
-    height: 1104px;
-    right: 60px;
-    background-size: cover;
+    width: 70%;
+    height: 100%;
+    right: 0;
+    background-size: contain;
     background-repeat: no-repeat;
+    background-position: top right;
     z-index: -1;
 }
 
@@ -486,8 +488,9 @@
 }
 
 .city__mobile--slider-item-image {
-    min-width: 100%;
+    max-width: 346px;
     min-height: 400px;
+    min-width: 0;
     margin: 0;
     margin-bottom: 30px;
 }

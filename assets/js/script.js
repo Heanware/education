@@ -151,19 +151,12 @@ $(function () {
                 $sliderItems.eq(index - 1).addClass("slide-hide");
             },
             responsive: {
-                0: {
-                    items: 1,
-                    center: false, // если установлено в false, и items не целое число, слайдер начинает баговать
-                                   // даёт посмотреть только первые 2 слайда, не пускает до третьего
-                    // и в принципе непредсказуемо себя ведёт. Если отключить mobileSliderCallback то проблема не уходит, то есть причина не в нём
-                    margin: 40
-                },
                 320: {
                     items: 1,
                     center: false,
                 },
                 568: {
-                    items: 2.1
+                    items: 2
                 }
             }
         });
