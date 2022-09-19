@@ -73,6 +73,10 @@
         padding-top: 80px;
     }
 
+    .city__history--top-description-top {
+        padding-bottom: 40px;
+    }
+
     .city__history--top-img {
         width: 576px;
         height: 580px;
@@ -258,8 +262,13 @@
         min-height: 220px;
     }
 
-    .city__history--bottom-description-title {
+    .city__history--bottom-description-top {
+        padding-bottom: 70px;
+    }
+
+    .city__history--bottom-description-top-title {
         font-size: 32px;
+        margin-bottom: 60px;
     }
 
     .city__history--bottom-img {
@@ -298,11 +307,15 @@
     }
 
     .city__advantage--text {
-        max-width: 720px;
+        max-width: 580px;
     }
 
     .city__facts--slider {
         padding: 0 0 0 100px;
+    }
+
+    .city__facts--slider-title {
+        font-size: 12px;
     }
 
     .city__facts--slider-item-title {
@@ -313,7 +326,7 @@
     .city__facts--slider-item-image {
         min-width: 330px;
         max-height: 383px;
-        margin-left: 25%;
+        margin-left: 23%;
     }
 
     .city__facts--slider-item-description {
@@ -360,7 +373,7 @@
     }
 
     .city__header-wrapper {
-        padding-top: 120px;
+        padding-top: 150px;
         padding-bottom: 120px;
     }
 
@@ -377,10 +390,6 @@
 
     .city__header--info {
         min-height: 535px;
-    }
-
-    .city__header--about {
-        min-height: 290px;
     }
 
     .city__history {
@@ -427,7 +436,7 @@
         padding: 0;
     }
 
-    .city__history--bottom-description-title {
+    .city__history--bottom-description-top-title {
         margin-bottom: 40px;
     }
 
@@ -519,6 +528,11 @@
         margin: 15px 0 45px 0;
     }
 
+    .city__header-wrapper {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
     .city__header--image {
         width: 719px;
         height: 632px;
@@ -589,20 +603,24 @@
         max-width: 255px;
     }
 
+    .city__history--top-description-top {
+        padding-bottom: 30px;
+    }
+
     .city__history--bottom-description {
         min-height: 120px;
     }
 
-    .city__history--bottom-description-title {
+    .city__history--bottom-description-top-title {
         margin-bottom: 30px;
+    }
+
+    .city__history--bottom-description-top {
+        padding-bottom: 50px;
     }
 
     .city__history--top-description {
         padding-top: 30px;
-    }
-
-    .city__advantage-big {
-        padding: 80px 0;
     }
 
     .history__additional {
@@ -618,6 +636,11 @@
         padding-bottom: 0;
     }
 
+    .city__advantage-big {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
     .cities-menu__item--name,
     .city__advantage--text {
         font-size: 18px;
@@ -631,19 +654,15 @@
         max-width: 362px;
     }
 
-
-    .city__history--top-description,
-    .city__history--bottom-description,
-    .city__header--info-description,
-    .city__header--about-right {
-        text-indent: unset;
+    .city__mobile--title-item {
+        max-width: 240px;
     }
 
     .city__mobile--title-item,
     .city__header--about-left,
     .city__history--top-title,
     .cities-menu__item:first-child > .cities-menu__item--name,
-    .city__history--bottom-description-title {
+    .city__history--bottom-description-top-title {
         font-size: 22px;
     }
 
@@ -662,13 +681,22 @@
     }
 
     .city__mobile--slider-item-image {
-        min-height: 280px;
+        min-height: 215px;
         margin-bottom: 15px;
     }
 
     .city__mobile--slider-item-description {
         max-width: 255px;
     }
+
+    .city__header--info-description,
+    .city__header--about-right,
+    .city__history--top-description-top,
+    .city__history--bottom-description-top,
+    .history__additional--description {
+        text-indent: unset;
+    }
+
 }
 
 @media (max-width: 320px) {
@@ -690,7 +718,7 @@
     }
 
     .city__header-wrapper {
-        padding-top: 80px;
+        padding-top: 120px;
         padding-bottom: 80px;
     }
 
@@ -796,7 +824,8 @@
 
     .city__mobile--titles-items {
         top: 0;
-        min-height: 100px;
+        padding-top: 40px;
+        padding-bottom: 30px;
     }
 
     .city__mobile--slider-item-image {

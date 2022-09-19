@@ -15,6 +15,7 @@
 * {
     margin: 0;
     padding: 0;
+    color: #232323;
     font-family: "Manrope", serif;
     font-style: normal;
     box-sizing: border-box;
@@ -33,7 +34,7 @@
 
 .cover-active {
     opacity: 1;
-    z-index: 3;
+    z-index: 5;
     transform: translate(0, 0);
     transition: opacity 0.2s, background-color 0.2s, transform 0.2s;
 }
@@ -67,6 +68,12 @@
 .cities-menu__item:hover .cities-menu__item--button,
 .cities-menu__item:hover .cities-menu__item--description {
     opacity: 1;
+}
+
+.cities-menu__item--name,
+.cities-menu__item--description {
+    font-family: "ManropeLight";
+    color: white;
 }
 
 .cities-menu__item--name {
@@ -168,7 +175,7 @@
 .city__header--about-right {
     font-size: 24px;
     text-indent: 30px;
-    padding-right: 150px;
+    max-width: 750px;
 }
 
 .city__video--wrapper {
@@ -209,7 +216,7 @@
 }
 
 .city__history--top {
-    padding: 0 0 180px 0;
+    padding: 0 0 150px 0;
     display: flex;
     flex-direction: column;
 }
@@ -274,25 +281,41 @@
     padding-top: 105px;
     mix-blend-mode: hard-light;
     z-index: 1;
-    text-indent: 30px;
+
 }
+
+.city__history--top-description-top {
+    text-indent: 30px;
+    padding-bottom: 65px;
+}
+
 .history__additional--description {
     min-height: 400px;
     padding-top: 160px;
+    text-indent: 40px;
 }
+
 .city__history--bottom-description {
     max-width: 600px;
     min-height: 480px;
     font-size: 18px;
     z-index: 1;
-    text-indent: 30px;
 }
 
-.city__history--bottom-description-title {
+.city__history--bottom-description-top {
+    text-indent: 30px;
+    padding-bottom: 110px;
+}
+
+.city__history--bottom-description-top-title {
     font-size: 60px;
     margin-bottom: 75px;
     text-transform: uppercase;
     text-indent: 0;
+}
+
+.city__history--bottom-description-top-text {
+    text-indent: 30px;
 }
 
 .city__advantage, .city__advantage-empty {
