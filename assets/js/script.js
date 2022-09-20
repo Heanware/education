@@ -116,7 +116,7 @@ $(function () {
             }
         });
 
-        if (isCityAnimated) {
+        if (isCityAnimated && !isAnchorUsed) {
             $cities.each(function () {
                 let $city = $(this),
                     offset = $city.offset().top;
@@ -175,13 +175,13 @@ $(function () {
         }
         $anchor = $(this);
         isScrolling = true;
+        isAnchorUsed = true;
         $cover.css("background-color", $anchor.data("color"));
         $cover.addClass("cover-active");
         setTimeout(function () {
             $html.stop().animate({
                     scrollTop: $($anchor.data("href")).offset().top
                 }, 400, "linear", function () {
-                    isAnchorUsed = true;
                     $window.trigger("scroll");
                     $cover.removeClass("cover-active");
                     $cover.css("background-color", "");
