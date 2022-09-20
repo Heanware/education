@@ -120,6 +120,7 @@
 .city__header-wrapper {
     padding-top: 200px;
     padding-bottom: 340px;
+    overflow: hidden;
 }
 
 .city__header {
