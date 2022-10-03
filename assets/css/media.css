@@ -78,13 +78,13 @@
         height: 580px;
     }
 
-    .city__advantage ~ .city__history--element > .city__history--element-description,
+    .city__history > .city__advantage ~ .city__history--element > .city__history--element-description,
     .city__history > .city__history--element:nth-child(2n+4) > .city__history--element-description,
     .city__history > .city__history--element:nth-child(2n) > .city__history--element-description {
         max-width: 600px;
     }
 
-    .city__advantage ~ .city__history--element > .city__history--element-description,
+    .city__history > .city__advantage ~ .city__history--element > .city__history--element-description,
     .city__history > .city__history--element:nth-child(2n+4) > .city__history--element-description {
         padding-top: 10%;
     }
@@ -249,7 +249,7 @@
         line-height: 19px;
     }
 
-    .city__history--top-description {
+    .city__history--element-description {
         padding-top: 50px;
     }
 
@@ -258,11 +258,11 @@
         min-height: 220px;
     }
 
-    .city__history--bottom-description-top {
+    .city__history--element-description {
         padding-bottom: 70px;
     }
 
-    .city__history--bottom-description-top-title {
+    .city__history--element-description {
         font-size: 32px;
         margin-bottom: 60px;
     }
@@ -459,7 +459,7 @@
         padding-bottom: 220px;
     }
 
-    .city__history--bottom-description-top-title {
+    .city__history--element-description {
         margin-bottom: 40px;
     }
 
@@ -524,7 +524,7 @@
         align-self: flex-start;
     }
 
-    .city__history--top-title {
+    .city__history--element-title {
         max-width: 300px;
     }
 }
@@ -609,7 +609,7 @@
         top: 50%;
     }
 
-    .city__history--top {
+    .city__history--element {
         padding-bottom: 80px;
     }
 
@@ -635,23 +635,23 @@
         padding-bottom: 150px;
     }
 
-    .city__history--top-description-top {
+    .city__history--element-description {
         padding-bottom: 30px;
     }
 
-    .city__history--bottom-description {
+    .city__history--element-description {
         min-height: 120px;
     }
 
-    .city__history--bottom-description-top-title {
+    .city__history--element-description {
         margin-bottom: 30px;
     }
 
-    .city__history--bottom-description-top {
+    .city__history--element-description {
         padding-bottom: 50px;
     }
 
-    .city__history--top-description {
+    .city__history--element-description {
         padding-top: 30px;
     }
 
@@ -694,7 +694,7 @@
     .city__header--about-left,
     .city__history > .city__history--element > .city__history--element-title,
     .cities-menu__item:first-child > .cities-menu__item--name,
-    .city__history--bottom-description-top-title {
+    .city__history--element-description {
         font-size: 22px;
     }
 
@@ -726,8 +726,8 @@
 
     .city__header--info-description,
     .city__header--about-right,
-    .city__history--top-description-top,
-    .city__history--bottom-description-top,
+    .city__history--element-description,
+    .city__history--element-description,
     .history__additional--description {
         text-indent: unset;
     }

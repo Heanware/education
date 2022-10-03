@@ -352,18 +352,6 @@
     padding-bottom: 5%;
 }
 
-.city__history--bottom-description-top {
-    text-indent: 30px;
-    padding-bottom: 110px;
-}
-
-.city__history--bottom-description-top-title {
-    font-size: 60px;
-    margin-bottom: 75px;
-    text-transform: uppercase;
-    text-indent: 0;
-}
-
 .city__history--bottom-description-top-text {
     text-indent: 30px;
 }
