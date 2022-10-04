@@ -234,6 +234,7 @@
 
     .city__history > .city__history--element:nth-child(2n+3) {
         padding-bottom: 150px;
+        padding-top: 0;
     }
 
     .city__history > .city__history--element > .city__history--element-title {
@@ -259,12 +260,9 @@
     }
 
     .city__history--element-description {
-        padding-bottom: 70px;
-    }
-
-    .city__history--element-description {
         font-size: 32px;
-        margin-bottom: 60px;
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
 
     .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-img {
@@ -444,11 +442,6 @@
         padding-top: 45px;
     }
 
-    .city__advantage ~ .city__history--element > .city__history--element-description,
-    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-description {
-        padding: 0;
-    }
-
     .city__history > .city__history--element:nth-child(2n),
     .city__history > .city__history--element:nth-child(2n+3) {
         padding-bottom: 30px;
@@ -625,6 +618,11 @@
     .city__history > .city__history--element:nth-child(2n) > .city__history--element-description {
         line-height: 16px;
         max-width: 255px;
+    }
+
+    .city__history > .city__history--element:nth-child(2n) > .city__history--element-description,
+    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-description {
+        padding-bottom: 0;
     }
 
     .city__history > .city__advantage ~ .city__history--element > .city__history--element-description {
