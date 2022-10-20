@@ -9,7 +9,7 @@
     }
 
     .cities-menu__item {
-        padding: 30px 0 0 40px;
+        padding: 30px 40px 0 40px;
     }
 
     .cities-menu__item:first-child {
@@ -17,29 +17,36 @@
     }
 
     .cities-menu__item--description {
-        margin: 20px 0 55px 0;
+        margin: 20px 0 75px 0;
     }
 
     .city__header-wrapper {
         margin: 0 auto 0 auto;
         padding-top: 150px;
+        padding-bottom: 260px;
         background-size: 1075px 945px;
     }
 
     .city__header--image {
-        width: 1075px;
-        height: 945px;
-        right: 40px;
+        width: 71%;
+    }
+
+    .city__header--info-description {
+        margin-top: 40px;
     }
 
     .city__header--info {
         min-height: 900px;
         max-width: 600px;
-        padding: 100px 0 0 0;
+        padding: 0;
     }
 
     .city__header--about-left {
         padding-right: 60px;
+    }
+
+    .city__header--about-right {
+        padding: 0;
     }
 
     .city__video--wrapper video {
@@ -47,39 +54,49 @@
     }
 
     .city__history {
-        padding-bottom: 100px;
+        padding-top: 210px;
+        padding-bottom: 60px;
     }
 
-    .city__history--top {
-        padding-bottom: 130px;
-    }
-
-    .city__history--top-title {
+    .city__history > .city__history--element > .city__history--element-title {
+        padding-top: 15%;
         transform: translateX(125px);
     }
 
-    .city__history--top-description {
+    .city__history > .city__history--element:nth-child(2n+3) {
         padding-top: 60px;
     }
 
-    .city__history--top-img {
-        width: 576px;
-        height: 580px;
-    }
-
-    .city__history--bottom-description {
-        max-width: 600px;
-    }
-
-    .city__history--bottom-img {
+    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-img {
         width: 760px;
         height: 633px;
     }
 
-    .history__additional--small-img {
+    .city__history > .city__advantage ~ .city__history--element > .city__history--element-img,
+    .city__history > .city__history--element:nth-child(2n) > .city__history--element-img {
+        width: 576px;
+        height: 580px;
+    }
+
+    .city__history > .city__advantage ~ .city__history--element > .city__history--element-description,
+    .city__history > .city__history--element:nth-child(2n+4) > .city__history--element-description,
+    .city__history > .city__history--element:nth-child(2n) > .city__history--element-description {
+        max-width: 600px;
+    }
+
+    .city__history > .city__advantage ~ .city__history--element > .city__history--element-description,
+    .city__history > .city__history--element:nth-child(2n+4) > .city__history--element-description {
+        padding-top: 10%;
+    }
+
+    .city__history > .city__advantage ~ .city__history--element > .history__additional--small-img {
         width: 344px;
         height: 344px;
         top: 60%;
+    }
+
+    .city__history > .city__advantage ~ .city__history--element {
+        padding-bottom: 80px;
     }
 
     .history__additional {
@@ -87,8 +104,12 @@
         padding-bottom: 0;
     }
 
+    .history__additional--description {
+        padding-top: 120px;
+    }
+
     .city__advantage {
-        padding: 160px 0;
+        padding: 100px 0;
     }
 
     .city__advantage-big {
@@ -100,7 +121,7 @@
     }
 
     .city__advantage--text {
-        max-width: 1000px;
+        max-width: 989px;
     }
 
     .city__facts--slider {
@@ -108,7 +129,7 @@
     }
 
     .city__facts--slider-item-title {
-        top: 40%;
+        top: 34%;
     }
 
     .city__facts--slider-item-image {
@@ -139,7 +160,7 @@
     }
 
     .cities-menu__item {
-        padding: 15px 0 0 20px;
+        padding: 40px 0 0 20px;
     }
 
     .cities-menu__item--name {
@@ -157,6 +178,16 @@
 
     .cities-menu__item:first-child > .cities-menu__item--name {
         font-size: 35px;
+        margin: 0;
+    }
+
+    .cities-menu__item:first-child > .cities-menu__item--description {
+        max-width: 270px;
+        margin: 20px 0 60px 0;
+    }
+
+    .cities-menu__item--description {
+        margin: 20px 0 55px 0;
     }
 
     .city__header-wrapper {
@@ -165,15 +196,18 @@
     }
 
     .city__header--image {
-        width: 960px;
-        height: 845px;
-        right: 0;
-        background-position: 215px;
+        width: 100%;
+        right: -275px;
     }
 
     .city__header--info {
         max-width: 390px;
         align-self: center;
+        padding: 65px 0 0 0;
+    }
+
+    .city__header--info-description {
+        margin-top: 25px;
     }
 
     .city__header--info-title {
@@ -189,58 +223,82 @@
         font-size: 18px;
     }
 
+    .city__history {
+        padding-top: 140px;
+        padding-bottom: 80px;
+    }
+
     .city__history--title {
         margin-bottom: 0;
     }
 
-    .city__history--top {
-        padding-bottom: 100px;
+    .city__history > .city__history--element:nth-child(2n+3) {
+        padding-bottom: 150px;
+        padding-top: 0;
     }
 
-    .city__history--top-img {
-        width: 435px;
-        height: 438px;
-    }
-
-    .city__history--top-title {
+    .city__history > .city__history--element > .city__history--element-title {
         font-size: 32px;
-        max-width: 435px;
+        max-width: 402px;
         padding-top: 22%;
-        transform: translateX(90px);
+        transform: translateX(80px);
     }
 
-    .city__history--top-description,
-    .city__history--bottom-description {
+    .city__advantage ~ .city__history--element > .city__history--element-description,
+    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-description {
         max-width: 465px;
         line-height: 19px;
     }
 
-    .city__history--top-description {
+    .city__history--element-description {
         padding-top: 50px;
     }
 
-    .city__history--bottom-description {
+    .city__advantage ~ .city__history--element > .city__history--element-description,
+    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-description {
         min-height: 220px;
     }
 
-    .city__history--bottom-description-title {
+    .city__history--element-description {
         font-size: 32px;
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
 
-    .city__history--bottom-img {
+    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-img {
         width: 465px;
         height: 387px;
     }
 
-    .history__additional--small-img {
-        width: 261px;
-        height: 261px;
-        top: 45%;
+    .city__history > .city__advantage ~ .city__history--element > .city__history--element-img,
+    .city__history > .city__history--element:nth-child(2n) > .city__history--element-img {
+        width: 435px;
+        height: 438px;
     }
 
-    .city__advantage {
+    .city__history > .city__advantage ~ .city__history--element {
+        padding-top: 130px;
+    }
+
+    .history__additional--description {
+        padding-top: 95px;
+        min-height: 220px;
+    }
+
+    .history__additional {
+        padding-top: 0;
+    }
+
+    .city__history > .city__advantage ~ .city__history--element > .history__additional--small-img {
+        width: 261px;
+        height: 261px;
+        top: 80%;
+        z-index: 3;
+    }
+
+    .city__history > .city__advantage {
         font-size: 28px;
-        padding: 100px 0;
+        padding: 60px 0;
     }
 
     .city__advantage-big {
@@ -253,11 +311,15 @@
     }
 
     .city__advantage--text {
-        max-width: 720px;
+        max-width: 580px;
     }
 
     .city__facts--slider {
         padding: 0 0 0 100px;
+    }
+
+    .city__facts--slider-title {
+        font-size: 12px;
     }
 
     .city__facts--slider-item-title {
@@ -268,10 +330,12 @@
     .city__facts--slider-item-image {
         min-width: 330px;
         max-height: 383px;
+        margin-left: 25%;
     }
 
     .city__facts--slider-item-description {
         min-width: 270px;
+        padding-left: 50px;
     }
 
     .cities-menu__item--description,
@@ -282,8 +346,11 @@
 
     .cities-menu__item:first-child > .cities-menu__item--description,
     .city__header--info-description,
-    .city__history--top-description,
-    .city__history--bottom-description {
+    .city__advantage ~ .city__history--element > .city__history--element-description,
+    .city__history > .city__history--element:nth-child(2n+4) > .city__history--element-description,
+    .city__history > .city__history--element:nth-child(2n) > .city__history--element-description,
+    .city__advantage ~ .city__history--element > .city__history--element-description,
+    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-description {
         font-size: 14px;
     }
 }
@@ -308,18 +375,18 @@
     }
 
     .cities-menu__item--description {
-        margin: 20px 0 40px 0;
+        margin: 20px 0 50px 0;
+        max-width: 270px;
     }
 
     .city__header-wrapper {
-        padding-top: 120px;
-        padding-bottom: 90px;
+        padding-top: 150px;
+        padding-bottom: 120px;
     }
 
     .city__header--image {
-        width: 836px;
-        height: 736px;
-        background-position: 280px;
+        width: 113%;
+        right: -270px;
     }
 
     .city__header--about-left {
@@ -328,40 +395,65 @@
     }
 
     .city__header--info {
-        min-height: 440px;
+        min-height: 535px;
     }
 
     .city__history {
         padding-top: 100px;
-        padding-bottom: 100px;
+        padding-bottom: 0;
     }
 
-    .city__history--top-img {
+    .city__history--title {
+        position: static;
+        padding: 0;
+    }
+
+    .city__history > .city__history--element:nth-child(2n) > .city__history--element-img {
         width: 345px;
         height: 347px;
     }
 
-    .city__history--bottom-img {
+    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-img {
         width: 345px;
         height: 287px;
     }
 
-    .history__additional {
-        padding-top: 0;
+    .city__history > .city__advantage ~ .city__history--element > .city__history--element-img {
+        height: 344px;
     }
 
-    .history__additional--small-img {
+    .city__history > .city__advantage ~ .city__history--element > .history__additional--small-img {
         width: 221px;
         height: 221px;
+        top: 45%;
     }
 
-    .city__history--top-title {
-        padding-top: 23%;
+    .city__history > .city__history--element > .city__history--element-title {
+        padding-top: 20%;
+        transform: translateX(100px);
     }
 
-    .city__history--top-description,
-    .city__history--bottom-description {
+    .city__advantage ~ .city__history--element > .city__history--element-description,
+    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-description,
+    .city__advantage ~ .city__history--element > .city__history--element-description,
+    .city__history > .city__history--element:nth-child(2n+4) > .city__history--element-description,
+    .city__history > .city__history--element:nth-child(2n) > .city__history--element-description {
         max-width: 345px;
+        padding-top: 45px;
+    }
+
+    .city__history > .city__history--element:nth-child(2n),
+    .city__history > .city__history--element:nth-child(2n+3) {
+        padding-bottom: 30px;
+    }
+
+    .city__history > .city__advantage ~ .city__history--element {
+        padding-top: 0;
+        padding-bottom: 220px;
+    }
+
+    .city__history--element-description {
+        margin-bottom: 40px;
     }
 
     .city__advantage {
@@ -425,7 +517,7 @@
         align-self: flex-start;
     }
 
-    .city__history--top-title {
+    .city__history--element-title {
         max-width: 300px;
     }
 }
@@ -449,13 +541,17 @@
 
     .cities-menu__item--description,
     .cities-menu__item:first-child > .cities-menu__item--description {
-        margin: 15px 0 25px 0;
+        margin: 15px 0 45px 0;
+    }
+
+    .city__header-wrapper {
+        padding-top: 80px;
+        padding-bottom: 80px;
     }
 
     .city__header--image {
-        width: 719px;
-        height: 632px;
-        background-position: 220px;
+        width: 134%;
+        right: -240px;
     }
 
     .city__header--info {
@@ -466,6 +562,10 @@
 
     .city__header--info-title {
         font-size: 42px;
+    }
+
+    .city__header--info-description {
+        margin-top: 15px;
     }
 
     .city__header--about {
@@ -481,51 +581,94 @@
         font-size: 14px;
     }
 
-    .city__history--top-img,
-    .city__history--bottom-img {
+    .city__history {
+        padding-top: 70px;
+    }
+
+    .city__history--title {
+        position: absolute;
+        padding-top: 20px;
+    }
+
+    .city__history > .city__history--element:nth-child(2n) > .city__history--element-img,
+    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-img {
         width: 255px;
         height: 255px;
     }
 
-    .history__additional--small-img {
+    .city__history > .city__advantage ~ .city__history--element > .history__additional--small-img {
         width: 155px;
         height: 155px;
-        top: 55%;
+        top: 50%;
     }
 
-    .city__history--top {
+    .city__history--element {
         padding-bottom: 80px;
     }
 
-    .city__history--top-title {
+    .city__history > .city__history--element > .city__history--element-title {
         max-width: 50%;
         transform: translateX(32%);
     }
 
-    .city__history--top-description,
-    .city__history--bottom-description {
+    .city__advantage ~ .city__history--element > .city__history--element-description,
+    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-description,
+    .city__advantage ~ .city__history--element > .city__history--element-description,
+    .city__history > .city__history--element:nth-child(2n+4) > .city__history--element-description,
+    .city__history > .city__history--element:nth-child(2n) > .city__history--element-description {
         line-height: 16px;
         max-width: 255px;
     }
 
-    .city__history--bottom-description-title {
+    .city__history > .city__history--element:nth-child(2n) > .city__history--element-description,
+    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-description {
+        padding-bottom: 0;
+    }
+
+    .city__history > .city__advantage ~ .city__history--element > .city__history--element-description {
+        padding-top: 45px;
+    }
+
+    .city__history > .city__advantage ~ .city__history--element {
+        padding-bottom: 150px;
+    }
+
+    .city__history--element-description {
+        padding-bottom: 30px;
+    }
+
+    .city__history--element-description {
+        min-height: 120px;
+    }
+
+    .city__history--element-description {
         margin-bottom: 30px;
     }
 
-    .city__history--top-description {
-        padding-top: 30px;
+    .city__history--element-description {
+        padding-bottom: 50px;
     }
 
-    .city__advantage-big {
-        padding: 80px 0;
+    .city__history--element-description {
+        padding-top: 30px;
     }
 
     .history__additional {
         padding-bottom: 50px;
+        padding-top: 50px;
     }
 
     .history__additional--description {
         min-height: 150px;
+    }
+
+    .city__advantage {
+        padding-bottom: 0;
+    }
+
+    .city__advantage-big {
+        padding-top: 80px;
+        padding-bottom: 80px;
     }
 
     .cities-menu__item--name,
@@ -533,29 +676,33 @@
         font-size: 18px;
     }
 
-    .city__advantage--text {
-        max-width: 400px;
+    .city__advantage-big > .city__advantage--text {
+        max-width: 330px;
     }
 
-    .city__history--top-description,
-    .city__history--bottom-description,
-    .city__header--info-description,
-    .city__header--about-right {
-        text-indent: unset;
+    .city__advantage--text {
+        max-width: 362px;
+    }
+
+    .city__mobile--title-item {
+        max-width: 240px;
     }
 
     .city__mobile--title-item,
     .city__header--about-left,
-    .city__history--top-title,
+    .city__history > .city__history--element > .city__history--element-title,
     .cities-menu__item:first-child > .cities-menu__item--name,
-    .city__history--bottom-description-title {
+    .city__history--element-description {
         font-size: 22px;
     }
 
     .cities-menu__item:first-child > .cities-menu__item--description,
     .city__header--info-description,
-    .city__history--top-description,
-    .city__history--bottom-description,
+    .city__advantage ~ .city__history--element > .city__history--element-description,
+    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-description,
+    .city__advantage ~ .city__history--element > .city__history--element-description,
+    .city__history > .city__history--element:nth-child(2n+4) > .city__history--element-description,
+    .city__history > .city__history--element:nth-child(2n) > .city__history--element-description,
     .city__facts--slider-title,
     .city__mobile--slider-item-description,
     .city__mobile--title {
@@ -567,20 +714,36 @@
     }
 
     .city__mobile--slider-item-image {
-        min-height: 280px;
+        min-height: 215px;
         margin-bottom: 15px;
     }
 
     .city__mobile--slider-item-description {
         max-width: 255px;
     }
+
+    .city__header--info-description,
+    .city__header--about-right,
+    .city__history--element-description,
+    .city__history--element-description,
+    .history__additional--description {
+        text-indent: unset;
+    }
+
 }
 
 @media (max-width: 320px) {
-    .cities-menu__item--description,
+    .cities-menu__item {
+        padding: 30px 0 0 15px;
+    }
+
     .cities-menu__item:first-child > .cities-menu__item--description {
-        margin: 15px 0 25px 0;
+        margin: 15px 0 40px 0;
         max-width: 290px;
+    }
+
+    .cities-menu__item--description {
+        margin: 15px 0 35px 0;
     }
 
     .cities-menu__item--button {
@@ -588,11 +751,12 @@
     }
 
     .city__header-wrapper {
-        padding-top: 80px;
+        padding-top: 120px;
+        padding-bottom: 80px;
     }
 
     .city__header--info {
-        padding: 30px 0 0 0;
+        padding: 0 0 0 0;
         min-height: 320px;
         align-self: unset;
     }
@@ -602,27 +766,35 @@
     }
 
     .city__header--image {
-        width: 478px;
-        height: 421px;
-        background-position: 170px;
+        width: 165%;
+        right: -188px;
     }
 
     .city__history {
         padding-top: 80px;
-        padding-bottom: 0;
     }
 
-    .city__history--top-img,
-    .city__history--bottom-img {
+    .city__history--title {
+        position: static;
+        padding: 0;
+    }
+
+    .city__history > .city__history--element:nth-child(2n) > .city__history--element-img,
+    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-img {
         position: static;
     }
 
-    .city__history--top-img {
+    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-img {
+        margin-top: 20px;
+    }
+
+    .city__history > .city__history--element:nth-child(2n) > .city__history--element-img,
+    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-img {
         width: 290px;
         height: 292px;
     }
 
-    .city__history--top-title {
+    .city__history > .city__history--element > .city__history--element-title {
         align-self: flex-start;
         max-width: unset;
         color: #232323;
@@ -631,29 +803,46 @@
         mix-blend-mode: unset;
     }
 
-    .city__history--top-description,
-    .city__history--bottom-description {
+    .city__advantage ~ .city__history--element > .city__history--element-description,
+    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-description,
+    .city__advantage ~ .city__history--element > .city__history--element-description,
+    .city__history > .city__history--element:nth-child(2n+4) > .city__history--element-description,
+    .city__history > .city__history--element:nth-child(2n) > .city__history--element-description {
         margin: 0;
         max-width: unset;
     }
 
-    .city__history--bottom {
+    .city__history > .city__history--element:nth-child(2n+3) {
         flex-direction: column;
     }
 
-    .city__history--bottom-img {
+    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-img {
         width: 290px;
         height: 241px;
     }
 
-    .history__additional--small-img {
+    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-img {
+        height: unset;
+    }
+
+    .city__history > .city__advantage ~ .city__history--element {
+        padding-bottom: unset;
+    }
+
+    .city__history > .city__advantage ~ .city__history--element > .history__additional--small-img {
         width: 200px;
         height: 200px;
         margin-left: auto;
+        margin-top: 20px;
     }
 
     .city__advantage {
         padding-bottom: 0;
+        padding-top: 50px;
+    }
+
+    .city__advantage-empty {
+        padding: 40px 0;
     }
 
     .city__advantage-big {
@@ -661,6 +850,10 @@
     }
 
     .city__advantage--text {
+        max-width: 290px;
+    }
+
+    .city__advantage-big > .city__advantage--text {
         max-width: 290px;
     }
 
@@ -675,10 +868,15 @@
 
     .city__mobile--titles-items {
         top: 0;
-        min-height: 100px;
+        padding-top: 40px;
+        padding-bottom: 30px;
     }
 
     .city__mobile--slider-item-image {
         min-height: 210px;
+    }
+
+    .owl-item.active {
+        max-width: 230px;
     }
 }

@@ -1,6 +1,7 @@
 const videoBeforeAnimation = 300,
     slideChangeSpeed = 1000,
     slideChangeOffset = 210,
+    cityChangeOffset = 270,
     $window = $(window),
     $html = $("html");
 
@@ -92,7 +93,9 @@ $(function () {
         $anchors = $(".js-anchor"),
         scrollBarWidth = window.innerWidth - $window.width(),
         verticalHeight = $window.outerHeight(),
-        scrollPrev = 0;
+        scrollPrev = 0,
+        isCityAnimated = true,
+        speed;
 
     $window.on("scroll", function () {
         let scroll = $(this).scrollTop(),
@@ -113,59 +116,57 @@ $(function () {
             }
         });
 
-        $cities.each(function () {
-            let $city = $(this),
-                offset = $city.offset().top;
-            if (scroll + verticalHeight > offset &&
-                scroll + verticalHeight < offset + slideChangeOffset &&
-                isScrollingDown) {
-                $("a[href='#" + $city.attr("id") + "']").trigger("click");
-            }
-        });
+        if (isCityAnimated && !isAnchorUsed) {
+            $cities.each(function () {
+                let $city = $(this),
+                    offset = $city.offset().top;
+                if (scroll + verticalHeight > offset &&
+                    scroll + verticalHeight < offset + cityChangeOffset &&
+                    isScrollingDown) {
+                    $("a[data-href='#" + $city.attr("id") + "']").trigger("click");
+                }
+            });
+        }
     });
 
     if (window.matchMedia("(max-width: 768px)").matches) {
-        let effect = new Rellax(".rellax-img", {speed: 1.5}),
-            mobileSlider = $(".city__mobile--items.owl-carousel").owlCarousel({
-                center: true,
-                margin: 30,
-                onDragged: function (e) {
-                    let $currentSlide = $(e.target),
-                        count = e.item.count,
-                        index = e.item.index;
-                    if (index > count) {
-                        index = index - count;
-                    }
-                    let $closestCityMobile = $currentSlide.closest(".city__mobile"),
-                        $titles = $closestCityMobile.find(".city__mobile--title-item"),
-                        $sliderItems = $closestCityMobile.find(".city__mobile--slider-items-item");
-                    $titles.removeClass("title-active");
-                    $titles.eq(index).addClass("title-active");
-                    $sliderItems.removeClass("slide-hide");
-                    $sliderItems.eq(index - 1).addClass("slide-hide");
-                },
-                responsive: {
-                    0: {
-                        items: 1,
-                        center: false, // если установлено в false, и items не целое число, слайдер начинает баговать
-                                       // даёт посмотреть только первые 2 слайда, не пускает до третьего
-                        // и в принципе непредсказуемо себя ведёт. Если отключить mobileSliderCallback то проблема не уходит, то есть причина не в нём
-                        margin: 40
-                    },
-                    320: {
-                        items: 2
-                    },
-                    568: {
-                        items: 1.9
-                    }
+        isCityAnimated = false;
+        speed = 1;
+        let mobileSlider = $(".city__mobile--items.owl-carousel").owlCarousel({
+            center: true,
+            margin: 30,
+            onDragged: function (e) {
+                let $currentSlide = $(e.target),
+                    count = e.item.count,
+                    index = e.item.index;
+                if (index > count) {
+                    index = index - count;
                 }
-            });
+                let $closestCityMobile = $currentSlide.closest(".city__mobile"),
+                    $titles = $closestCityMobile.find(".city__mobile--title-item"),
+                    $sliderItems = $closestCityMobile.find(".city__mobile--slider-items-item");
+                $titles.removeClass("title-active");
+                $titles.eq(index).addClass("title-active");
+                $sliderItems.removeClass("slide-hide");
+                $sliderItems.eq(index - 1).addClass("slide-hide");
+            },
+            responsive: {
+                320: {
+                    items: 1,
+                    center: false,
+                },
+                568: {
+                    items: 2
+                }
+            }
+        });
     } else {
-        let effect = new Rellax(".rellax-img", {speed: 3});
+        speed = 2;
         $sliders.each(function () {
             new Slider($(this), verticalHeight, slideChangeSpeed, slideChangeOffset);
         });
     }
+    let effect = new Rellax(".rellax-img", {speed: speed});
 
     $anchors.on("click", function (e) {
         e = e.originalEvent;
@@ -174,13 +175,13 @@ $(function () {
         }
         $anchor = $(this);
         isScrolling = true;
+        isAnchorUsed = true;
         $cover.css("background-color", $anchor.data("color"));
         $cover.addClass("cover-active");
         setTimeout(function () {
             $html.stop().animate({
                     scrollTop: $($anchor.data("href")).offset().top
                 }, 400, "linear", function () {
-                    isAnchorUsed = true;
                     $window.trigger("scroll");
                     $cover.removeClass("cover-active");
                     $cover.css("background-color", "");
