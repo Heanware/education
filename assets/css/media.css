@@ -529,34 +529,47 @@
         padding-top: 20px;
     }
 
-    .city__history > .city__history--element:nth-child(2n) > .city__history--element-img,
-    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-img {
+    .city__history > .city__advantage ~ .city__history--element > .city__history--element-img:nth-child(1),
+    .city__history > .city__history--element:nth-child(even) > .city__history--element-img {
         width: 255px;
         height: 255px;
     }
 
-    .city__history > .city__advantage ~ .city__history--element > .history__additional--small-img {
+    .city__history > .city__advantage ~ .city__history--element > .city__history--element-text > .city__history--element-img {
         width: 155px;
         height: 155px;
         top: 50%;
+    }
+
+    .city__history > .city__history--element:nth-child(odd) > .city__history--element-img {
+        width: 255px;
+        height: 213px;
     }
 
     .city__history--element {
         padding-bottom: 80px;
     }
 
-    .city__history > .city__history--element > .city__history--element-title {
-        max-width: 50%;
-        transform: translateX(32%);
+    .city__history--element-title {
+        max-width: unset;
+        font-size: 22px;
+        transform: translateX(-50px);
+        padding-bottom: 30px;
     }
 
-    .city__advantage ~ .city__history--element > .city__history--element-description,
-    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-description,
-    .city__advantage ~ .city__history--element > .city__history--element-description,
-    .city__history > .city__history--element:nth-child(2n+4) > .city__history--element-description,
-    .city__history > .city__history--element:nth-child(2n) > .city__history--element-description {
-        line-height: 16px;
+    .city__history--element-text > .city__history--element-description {
+        font-size: 12px;
         max-width: 255px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .city__history > .city__history--element:nth-child(2) .city__history--element-description {
+        padding-top: 0;
+    }
+
+    .city__history--element-text {
+        padding-top: 40px;
     }
 
     .city__history > .city__history--element:nth-child(2n) > .city__history--element-description,
