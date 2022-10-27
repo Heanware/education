@@ -199,6 +199,8 @@
     transition: max-width 1s;
 }
 
+/* HISTORY */
+
 .bg-silver {
     background-color: #f4f4f4;
 }
@@ -209,31 +211,7 @@
     color: #232323;
 }
 
-.history__additional {
-    padding-bottom: 100px;
-    padding-top: 0;
-}
-
-/* HISTORY EVERY BLOCK AFTER TITLE*/
-
-.city__history > .city__history--element:nth-child(2n),
-.city__history > .city__history--element:nth-child(2n+3) {
-    position: relative;
-    display: flex;
-    padding-bottom: 70px;
-}
-
-/* HISTORY EVERY LEFT-IMAGE BLOCK */
-
-.city__history > .city__history--element:nth-child(2n) {
-    flex-direction: column;
-}
-
-/* HISTORY EVERY RIGHT-IMAGE BLOCK */
-
-.city__history > .city__history--element:nth-child(2n+3) {
-    padding-top: 150px;
-}
+/* HISTORY DEFAULT PROPERTIES FOR EVERY BLOCK*/
 
 .city__history--title {
     font-size: 16px;
@@ -242,119 +220,111 @@
     padding-top: 10px;
 }
 
-.city__history > .city__history--element {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-.city__history > .city__history--element > .city__history--element-title {
+.city__history--element-title {
     font-family: "ManropeLight";
     font-size: 60px;
-    padding-top: 20%;
+    padding-bottom: 75px;
     align-self: center;
     mix-blend-mode: difference;
     color: white;
     text-transform: uppercase;
     max-width: 754px;
-    transform: translateX(155px);
+    transform: translateX(-280px);
     z-index: 2;
 }
 
-/* HISTORY EVERY LEFT TEXT */
+.city__history > .city__history--element > .city__history--element-img {
+    position: static;
+    background-size: cover;
+}
 
-.city__advantage ~ .city__history--element > .city__history--element-description,
-.city__history > .city__history--element:nth-child(2n+3) > .city__history--element-description {
+
+.city__history--element-text > .city__history--element-description {
     max-width: 600px;
-    min-height: 480px;
+}
+
+.city__history--element-text {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 50%;
+    align-self: flex-start;
+    padding-top: 100px;
     font-size: 18px;
-    z-index: 1;
 }
 
-/* HISTORY EVERY RIGHT TEXT */
-
-.city__advantage ~ .city__history--element > .city__history--element-description,
-.city__history > .city__history--element:nth-child(2n+4) > .city__history--element-description,
-.city__history > .city__history--element:nth-child(2n) > .city__history--element-description {
-    margin-left: 50%;
-    font-size: 18px;
-    max-width: 600px;
-    z-index: 1;
-    text-indent: 30px;
+.city__history > .city__history--element {
+    padding-bottom: 0;
+    padding-top: 0;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
 }
 
-/* HISTORY EVERY FOURTH  BLOCK */
+/*HISTORY FIRST BLOCK */
 
-.city__advantage ~ .city__history--element > .city__history--element-description,
-.city__history > .city__history--element:nth-child(2n+4) > .city__history--element-description {
-    padding-top: 16%;
-}
-
-.city__history > .city__advantage ~ .city__history--element {
+.city__history > .city__history--element:nth-child(2) {
+    padding-bottom: 150px;
     padding-top: 0;
 }
 
-/* HISTORY EVERY SECOND  BLOCK */
+.city__history > .city__history--element:nth-child(2) .city__history--element-text {
+    align-self: flex-end;
+    padding-top: 0;
+}
 
 .city__history > .city__history--element:nth-child(2) > .city__history--element-description {
     padding-top: 75px;
 }
 
-.city__advantage ~ .city__history--element > .city__history--element-img,
-.city__history > .city__history--element > .city__history--element-img {
-    position: absolute;
-    background-size: cover;
+/* HISTORY EVERY RIGHT-IMAGE BLOCK */
+
+.city__history > .city__history--element:nth-child(odd) .city__history--element-text {
+    align-self: flex-start;
 }
 
-/* HISTORY EVERY LEFT IMAGE */
-
-.city__history > .city__history--element:nth-child(2n) > .city__history--element-img {
-    width: 765px;
-    height: 770px;
-    left: 0;
+.city__history > .city__history--element:nth-child(odd) {
+    flex-direction: row-reverse;
 }
 
-/* HISTORY EVERY RIGHT IMAGE */
-
-.city__history > .city__history--element:nth-child(2n+3) > .city__history--element-img {
+.city__history > .city__history--element:nth-child(odd) > .city__history--element-img {
     width: 900px;
     height: 750px;
     right: 0;
 }
 
-.city__history > .city__advantage ~ .city__history--element > .city__history--element-img {
+/* HISTORY EVERY LEFT-IMAGE BLOCK */
+
+.city__history > .city__history--element:nth-child(even) > .city__history--element-img {
     width: 765px;
     height: 770px;
     left: 0;
 }
 
+/* HISTORY AFTER ADVANTAGE BLOCKS */
+
 .city__history > .city__advantage ~ .city__history--element {
-    padding-bottom: 250px;
+    flex-direction: row;
 }
 
-.city__history > .city__advantage ~ .city__history--element > .history__additional--small-img {
-    background-size: cover;
+.city__history > .city__advantage ~ .city__history--element > .city__history--element-img:nth-child(1) {
+    width: 765px;
+    height: 770px;
+}
+.city__history > .city__advantage ~ .city__history--element > .city__history--element-text > .city__history--element-img{
     width: 450px;
     height: 450px;
-    top: 60%;
-    right: 0;
-    left: unset;
+    align-self: flex-end;
 }
-
-.history__additional--description {
-    min-height: 400px;
-    padding-top: 160px;
-    text-indent: 40px;
+.city__history > .city__advantage ~ .city__history--element > .city__history--element-text {
+    padding-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-self: unset;
 }
-
-.description-no-title {
-    padding-top: 25%;
-    padding-bottom: 5%;
+.city__history > .city__advantage ~ .city__history--element > .city__history--element-text .city__history--element-description{
+    flex: 1;
 }
-
-.city__history--bottom-description-top-text {
-    text-indent: 30px;
-}
+/* HISTORY ADVANTAGE BLOCKs  */
 
 .city__history > .city__advantage {
     text-align: center;
@@ -388,6 +358,8 @@
 .city__advantage--text {
     max-width: 950px;
 }
+
+/* SLIDER */
 
 .city__facts--slider-wrapper {
     width: 100%;
