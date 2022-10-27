@@ -293,7 +293,7 @@
 }
 
 /* HISTORY EVERY LEFT-IMAGE BLOCK */
-
+.city__history > .city__advantage ~ .city__history--element > .city__history--element-img:nth-child(1),
 .city__history > .city__history--element:nth-child(even) > .city__history--element-img {
     width: 765px;
     height: 770px;
@@ -306,23 +306,26 @@
     flex-direction: row;
 }
 
-.city__history > .city__advantage ~ .city__history--element > .city__history--element-img:nth-child(1) {
-    width: 765px;
-    height: 770px;
-}
-.city__history > .city__advantage ~ .city__history--element > .city__history--element-text > .city__history--element-img{
+.city__history > .city__advantage ~ .city__history--element > .city__history--element-text > .city__history--element-img {
     width: 450px;
     height: 450px;
     align-self: flex-end;
+    background-size: cover;
 }
+
 .city__history > .city__advantage ~ .city__history--element > .city__history--element-text {
     padding-top: 150px;
     display: flex;
     flex-direction: column;
     align-self: unset;
 }
-.city__history > .city__advantage ~ .city__history--element > .city__history--element-text .city__history--element-description{
+
+.city__history > .city__advantage ~ .city__history--element > .city__history--element-text .city__history--element-description {
     flex: 1;
+}
+
+.city__history > .city__advantage ~ .city__history--element:last-child{
+    padding-bottom: 0;
 }
 /* HISTORY ADVANTAGE BLOCKs  */
 
