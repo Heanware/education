@@ -728,61 +728,41 @@
         padding: 0;
     }
 
-    .city__history > .city__history--element:nth-child(2n) > .city__history--element-img,
-    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-img {
-        position: static;
+    .city__history > .city__history--element:nth-child(2) {
+        flex-direction: column;
     }
 
-    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-img {
-        margin-top: 20px;
+    .city__history > .city__history--element:nth-child(odd),
+    .city__history > .city__history--element {
+        flex-direction: column-reverse;
+        padding-bottom: 20px;
     }
 
-    .city__history > .city__history--element:nth-child(2n) > .city__history--element-img,
-    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-img {
+    .city__history > .city__advantage ~ .city__history--element > .city__history--element-img:nth-child(1),
+    .city__history > .city__history--element:nth-child(2) > .city__history--element-img {
         width: 290px;
         height: 292px;
     }
 
-    .city__history > .city__history--element > .city__history--element-title {
-        align-self: flex-start;
-        max-width: unset;
-        color: #232323;
-        font-family: "Manrope";
-        transform: unset;
-        mix-blend-mode: unset;
-    }
-
-    .city__advantage ~ .city__history--element > .city__history--element-description,
-    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-description,
-    .city__advantage ~ .city__history--element > .city__history--element-description,
-    .city__history > .city__history--element:nth-child(2n+4) > .city__history--element-description,
-    .city__history > .city__history--element:nth-child(2n) > .city__history--element-description {
-        margin: 0;
-        max-width: unset;
-    }
-
-    .city__history > .city__history--element:nth-child(2n+3) {
-        flex-direction: column;
-    }
-
-    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-img {
+    .city__history > .city__history--element:nth-child(odd) > .city__history--element-img,
+    .city__history > .city__history--element:nth-child(even) > .city__history--element-img {
         width: 290px;
-        height: 241px;
-    }
-
-    .city__history > .city__history--element:nth-child(2n+3) > .city__history--element-img {
-        height: unset;
+        height: 242px;
     }
 
     .city__history > .city__advantage ~ .city__history--element {
-        padding-bottom: unset;
+        flex-direction: column;
     }
 
-    .city__history > .city__advantage ~ .city__history--element > .history__additional--small-img {
-        width: 200px;
-        height: 200px;
-        margin-left: auto;
-        margin-top: 20px;
+    .city__history > .city__advantage ~ .city__history--element > .city__history--element-text {
+        padding-top: 50px
+    }
+    .city__history--element-text > .city__history--element-description{
+        max-width: unset;
+    }
+    .city__history--element-title {
+        transform: unset;
+        padding-top: 60px;
     }
 
     .city__advantage {
